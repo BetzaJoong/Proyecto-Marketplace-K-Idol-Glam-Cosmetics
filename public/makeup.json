@@ -1,0 +1,80 @@
+[
+    {
+        "desc": "Una base de maquillaje de alta definición que proporciona una cobertura impecable y natural, ideal para todo tipo de piel.",
+        "id": "P001",
+        "img": "https://th.bing.com/th/id/OIP.Rr10vsWT2Uf614OJAIbZUQHaHa?rs=1&pid=ImgDetMain",
+        "ingredients": [
+            "Agua",
+            "Glicerina",
+            "Dióxido de titanio",
+            "Óxidos de hierro"
+        ],
+        "name": "Base de maquillaje",
+        "price": 5950
+    },
+    {
+        "desc": "Una paleta de sombras con tonos nude o con glitter que te permite crear una variedad de looks desde naturales hasta ahumados intensos.",
+        "id": "P002",
+        "img": "https://th.bing.com/th/id/OIP.U9ND7D1-wjvH_1LaKNyaLAHaHa?rs=1&pid=ImgDetMain",
+        "ingredients": [
+            "Mica",
+            "Talco",
+            "Aceite mineral",
+            "Polietileno"
+        ],
+        "name": "Paleta de Sombras",
+        "price": 7250
+    },
+    {
+        "desc": "Un rubor en crema fácil de aplicar que proporciona un aspecto saludable y luminoso a tus mejillas durante todo el día.",
+        "id": "P003",
+        "img": "https://http2.mlstatic.com/D_NQ_NP_745586-MLM50172351948_062022-O.webp",
+        "ingredients": [
+            "Aceite de coco",
+            "Cera de abejas",
+            "Tocoferol",
+            "Colorantes"
+        ],
+        "name": "Rubor en Crema",
+        "price": 5990
+    },
+    {
+        "desc": "Un labial líquido de acabado mate que ofrece una alta pigmentación y una larga duración sin resecar tus labios.",
+        "id": "P004",
+        "img": "https://falabella.scene7.com/is/image/Falabella/gsc_115525325_1155545_1?wid=800&hei=800&qlt=70",
+        "ingredients": [
+            "Isododecano",
+            "Ciclopentasiloxano",
+            "Dimeticona",
+            "Silica"
+        ],
+        "name": "Labial Líquido Mate",
+        "price": 9590
+    },
+    {
+        "desc": "Un delineador en gel con glitter resistente al agua que garantiza un delineado preciso y de larga duración, ideal para looks intensos.",
+        "id": "P005",
+        "img": "https://cdn.shopify.com/s/files/1/0085/4327/3020/products/peripera-sugar-twinkle-liquid-sodapop.jpg?v=1624712173&width=300",
+        "ingredients": [
+            "Cera microcristalina",
+            "Aceite mineral",
+            "Cera de abejas",
+            "Tocoferol"
+        ],
+        "name": "Delineador Glitter",
+        "price": 6450
+    },
+    {
+        "desc": "Un tónico suave exfoliante que elimina las células muertas de la piel, desobstruye los poros y suaviza la textura de la piel, dejándola más luminosa y uniforme.",
+        "id": "P006",
+        "img": "https://universoenlinea.com/wp-content/uploads/tratamiento-acne-aha-bha-pha.jpg",
+        "ingredients": [
+            "Ácido glicólico (AHA)",
+            "Ácido salicílico (BHA)",
+            "Extracto de té verde",
+            "Aloe vera"
+        ],
+        "name": "Tónico Exfoliante",
+        "price": 8500
+    }
+]

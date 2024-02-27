@@ -1,0 +1,63 @@
+.header {
+    position: relative;
+    text-align: center;
+    height: 500px;
+}
+
+.header-bg {
+    background-image: url('../../img/makeup.webp');
+    background-size: cover;
+    background-position: center;
+    height: 63%;
+}
+
+.header-content {
+    position: absolute;
+    top: 40%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+}
+
+.header-title {
+    font-size: 60px;
+    color: rgb(11, 11, 11);
+    text-shadow: 0 0 9px #dba9d3;
+    font-weight: bold;
+}
+
+.header-description {
+    font-size: 23px;
+    margin-top: 10px;
+    color: rgb(11, 11, 11);
+    text-shadow: 0 0 9px #f8edf7;
+    font-weight: bold;
+
+}
+
+.decoration-line {
+    border-top: 2px solid #bc25e6;
+    margin: 8px 0;
+}
+
+@media (max-width: 576px) {
+    .header {
+        height: auto;
+    }
+
+    .header-bg {
+        height: 300px;
+    }  
+
+    .header-content {
+        top: 60%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .header-title {
+        font-size: 30px;
+    }
+
+    .header-description {
+        font-size: 17px;
+    }
+}

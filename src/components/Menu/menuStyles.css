@@ -1,0 +1,50 @@
+
+.menu-container {
+    position: relative;
+    left: -300px; /* mover más el menú a la izquierda */
+}
+
+.menu-title {
+    color: #fff; /* Cambiar el color del texto a blanco */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    left: 220;
+}
+
+.menu-title:hover {
+    background-color: rgb(133, 213, 235);
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    width: 200px; /* Ajusta el ancho del menú según sea necesario */
+    background-color: #d4e8f4;
+    border: 1px solid #f7f2f2;
+    display: none; /* Inicialmente oculto */
+}
+
+.menu-list.open {
+    display: block;
+    /* Mostrar cuando está abierto */
+}
+
+.menu-item {
+    padding: 10px;
+}
+
+.menu-link {
+    color: #0f100f;
+    text-decoration: none;
+}
+
+.menu-link:hover {
+    color: rgb(26, 135, 171);
+    text-decoration: underline;
+}

@@ -1,0 +1,16 @@
+.footer {
+    background-color: #96eac6;
+    color: #1f1e1e;
+    padding: 20px 0;
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 576px) {
+    .footer {
+        padding: 10px 0;
+    }
+}

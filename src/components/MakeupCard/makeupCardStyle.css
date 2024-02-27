@@ -1,0 +1,118 @@
+/* Estilos para la tarjeta de maquillaje */
+
+.makeup-card {
+    width: 260px;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    margin-left: 30px;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+    top: -175px;
+}
+
+/* Estilos para la imagen del maquillaje */
+.makeup-card .makeup-image {
+    width: 100%; 
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Estilos para el nombre del maquillaje */
+.makeup-card .makeup-name {
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.makeup-ingredients {
+    width: 220px;
+    display: inline-block;
+    border: 1px solid #d1d0d0;
+    border-radius: 5px;
+    margin: 7px;
+    background-color: #fff;
+}
+
+/* Estilos para la lista de ingredientes */
+.makeup-card .makeup-ingredients p {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.makeup-card .makeup-ingredients ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.makeup-card .makeup-ingredients li {
+    margin: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.makeup-card .makeup-ingredients li::before {
+    content: '💄';
+    /* Agrega el icono de lápiz labial antes de cada elemento de la lista */
+    margin-right: 10px;
+}
+
+/* Estilos para el precio del maquillaje */
+.makeup-card .makeup-price {
+    font-size: 18px;
+    color: #090707;
+}
+
+/* Estilos para el contenedor de botones */
+.makeup-card .button-container {
+    margin: 10px;
+}
+
+/* Estilos para los botones */
+.makeup-card button {
+    margin: 14px;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 576px) {
+    .makeup-card {
+        width: calc(100% - 40px); /* Ancho del 100% menos los márgenes */
+        margin: 10px 20px;
+        text-align: left; 
+        top: 0;
+    }
+
+    .makeup-card .makeup-image {
+        height: 350px;
+    }
+
+    .makeup-card .makeup-name {
+        font-size: 16px;
+        margin: 8px;
+    }
+
+    .makeup-ingredients {
+        width: calc(100% - 20px); 
+        margin: 5px;
+    }
+
+    .makeup-card .makeup-ingredients p {
+        font-size: 14px;
+    }
+
+    .makeup-card .makeup-price {
+        font-size: 16px; 
+    }
+
+    .makeup-card .button-container {
+        margin: 5px; 
+    }
+
+    .makeup-card button {
+        margin: 7px;
+    }
+}

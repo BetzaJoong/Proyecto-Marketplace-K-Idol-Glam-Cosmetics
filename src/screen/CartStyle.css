@@ -1,0 +1,111 @@
+/* Estilo para el contenedor principal del carrito */
+.cart {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 700px;
+    background-color: #fff;
+    margin-top: 80px; /* Mantener la misma posición de margen superior */
+}
+
+/* Estilo para los detalles de cada producto de maquillaje en el carrito */
+.makeup-cart {
+    margin: 15px 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+
+/* Estilo para la imagen del producto de maquillaje */
+.makeup-img {
+    max-width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo para el nombre del producto de maquillaje */
+.makeup-details p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Estilo para el contenedor del precio del producto de maquillaje */
+.makeup-price-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Estilo para el contenedor del nombre del producto de maquillaje */
+.makeup-name-container {
+    margin-top: 20px
+}
+
+/* Estilo para el precio del producto de maquillaje */
+.makeup-details .price {
+    font-size: 16px;
+    color: #009900;
+    margin-top: 5px;
+}
+
+/* Estilo para el control de cantidad de productos de maquillaje */
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    margin: 0 5px;
+}
+
+/* Estilo para resaltar el texto "Total:" */
+.total-text {
+    font-weight: bold;
+}
+
+/* Estilo para el botón "Ir a pagar" */
+.cart .btn-success {
+    margin-top: 20px;
+}
+
+
+/* Media query para dispositivos móviles */
+@media (max-width: 576px) {
+    .cart {
+        padding: 90px 75px; 
+        margin-left: 0;
+    }
+
+    .makeup-img {
+        max-width: 350%;
+    }
+
+    .makeup-details p {
+        font-size: 16px;
+    }
+
+    .makeup-price-container {
+        margin-top: 10px; 
+    }
+
+    .makeup-name-container {
+        margin-top: 15px;
+    } 
+
+    .makeup-details .price {
+        font-size: 14px; 
+    }
+
+    .quantity-control button {
+        margin: 0px; 
+    }
+
+    .total-text {
+        font-size: 16px; 
+    }
+
+    .cart .btn-success {
+        margin-top: 15px; 
+    }
+}

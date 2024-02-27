@@ -1,0 +1,32 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home section h3 {
+    font-size: 34px; 
+    color:  #60145c;
+    margin-bottom: 20px; 
+    margin-top: -180px;
+    text-align: center;
+}
+
+
+/* Estilos para el buscador */
+.search-and-sort {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.search-and-sort {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 200px;
+}
+
+.search-and-sort input[type="text"],
+.search-and-sort select {
+    margin-right: 0px;
+}

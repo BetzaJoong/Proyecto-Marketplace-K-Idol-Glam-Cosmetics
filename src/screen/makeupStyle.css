@@ -1,0 +1,95 @@
+/* Estilo para la tarjeta de detalles de maquillaje */
+.makeup-detail-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 100px auto; /* Modificar el margen para centrar la tarjeta */
+    max-width: 1000px;
+    display: flex;
+}
+
+/* Estilo para la imagen de maquillaje (columna izquierda) */
+.makeup-detail-image {
+    max-width: 350px;
+    max-height: 397px;
+    object-fit: cover;
+    border-top-left-radius: 10px; /* Agregar bordes redondeados a la esquina superior izquierda */
+    border-bottom-left-radius: 10px; /* Agregar bordes redondeados a la esquina inferior izquierda */
+}
+
+/* Estilo para la información de maquillaje (columna derecha) */
+.makeup-detail-info {
+    flex: 1;
+    padding: 20px;
+    
+}
+
+/* Estilo para el título de la tarjeta */
+.makeup-detail-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilo para la sección de ingredientes */
+.makeup-detail-ingredients {
+    margin-top: 4px;
+}
+
+.makeup-detail-ingredients li {
+    display: flex;
+}
+
+.makeup-detail-ingredients li::before {
+    margin-right: 10px;
+}
+
+/* Estilo para el contenedor del botón */
+.makeup-detail-button {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end; /* Alinea el botón a la derecha */
+}
+
+/* Estilo para el botón "Añadir al carrito" */
+.makeup-detail-add-to-cart {
+    background-color: #dc3545; 
+    color: #fff;
+    border: none; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+.makeup-detail-add-to-cart:hover {
+    background-color: #c82333;
+}
+
+
+/* Media query para dispositivos móviles */
+@media (max-width: 576px) {
+    .makeup-detail-card {
+        margin:150px auto;
+    }
+
+    .makeup-detail-image {
+        max-width: 200px;
+        max-height: 307px;
+    }
+
+    .makeup-detail-info {
+        padding: 10px;
+    }
+
+    .makeup-detail-title {
+        font-size: 20px; 
+    }
+
+    .makeup-detail-button {
+        margin-top: 5px;
+    }
+
+    .makeup-detail-add-to-cart {
+        padding: 8px 16px;
+    }
+}

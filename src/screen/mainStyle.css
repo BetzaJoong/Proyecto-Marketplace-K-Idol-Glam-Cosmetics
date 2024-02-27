@@ -1,0 +1,144 @@
+body{
+    background-image: url('../img/Fondo.png');
+}
+
+.main-page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 90px;
+    background-color: #ffffff;
+}
+
+.main-page-container img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.borde {
+    border: 10px solid transparent;
+    /* Borde transparente */
+    padding: 15px;
+    /* Espacio entre el borde y la imagen */
+    border-image: url(../img/Fondo.png) 30 round;
+    /* Imagen de borde con efecto de redondeo */
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: underline;
+    font-size: 25px;
+    text-align: center;
+}
+
+p {
+    color: rgb(57, 39, 53);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.brand-description {
+    margin-top: 40px;
+}
+
+.brand-description img {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.brand-description img:hover {
+    transform: scale(1.05);
+    /* Cambia el tamaño de la imagen al pasar el cursor */
+}
+
+
+.gallery {
+    margin-top: 40px;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.image-gallery img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+    /* Cambia el tamaño de la imagen al pasar el cursor */
+}
+
+
+/* Banner */
+h6 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.bi-arrow-through-heart-fill {
+    color: rgb(255, 64, 0);
+}
+
+.banner {
+    background-color: rgb(246, 216, 230);
+    margin-top: 40px;
+    text-align: center;
+}
+
+.banner-text {
+    animation: desvanecer 5s ease-in-out infinite alternate;
+}
+
+@keyframes desvanecer {
+    0% {
+        opacity: 0;
+        /* Inicia completamente transparente */
+    }
+
+    100% {
+        opacity: 1;
+        /* Termina completamente visible */
+    }
+}
+
+.featured-product {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-item h3 {
+    margin-top: 0;
+}
+
+.comprar{
+    background-color: rgb(194, 249, 197);
+}
