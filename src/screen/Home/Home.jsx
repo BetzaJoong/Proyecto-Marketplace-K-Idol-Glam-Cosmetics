@@ -2,8 +2,7 @@ import React, { useContext, useState } from 'react';
 import './homeStyle.css';
 import { AppContext } from '../../context/MakeupContext';
 import MakeupCard from '../../components/MakeupCard/MakeupCard';
-// import LoadingCard from '../../components/MakeupCard/LoadingCard';
-import Header from '../../components/Header/Header'; // Corregir la importación del componente Header
+import Header from '../../components/Header/Header'; 
 
 export default function Home() {
     const context = useContext(AppContext);
@@ -27,7 +26,7 @@ export default function Home() {
         <div className="home">
             <Header />
             <section>
-            <h3>Productos</h3> 
+                <h3>Productos</h3> 
                 <div className="search-and-sort">
                     <input
                         type="text"
@@ -37,8 +36,8 @@ export default function Home() {
                     />
                     <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
                         <option value="">Ordenar por...</option>
-                        <option value="asc">A-Z</option>
-                        <option value="desc">Z-A</option>
+                        <option value="asc">Ascendente</option>
+                        <option value="desc">Descendente</option>
                     </select>
                 </div>
                 {filteredAndSortedMakeup.length > 0 ? (

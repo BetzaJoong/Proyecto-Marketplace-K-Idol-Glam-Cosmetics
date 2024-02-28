@@ -7,3 +7,5 @@ router.post('/login', (req, res) => userController.loginUser(req, res, pool));
 
 module.exports = router;
 
+
+

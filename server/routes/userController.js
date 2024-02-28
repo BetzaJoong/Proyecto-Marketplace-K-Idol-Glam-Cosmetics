@@ -1,3 +1,5 @@
+//userController.js
+
 const bcrypt = require('bcryptjs');
 
 const registerUser = async (req, res, pool) => {
@@ -57,5 +59,4 @@ module.exports = {
     registerUser,
     loginUser
 };
-
 

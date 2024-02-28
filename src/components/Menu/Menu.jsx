@@ -41,12 +41,8 @@ export default function Menu() {
                 </ul>
             </div>
         );
-    } else {
-        return null; // Si el usuario no ha iniciado sesión, no renderizar el menú
-    }
+    } 
+    // else {
+    //     return null; // Si el usuario no ha iniciado sesión, no renderizar el menú
+    // }
 }
-
-
-
-
-

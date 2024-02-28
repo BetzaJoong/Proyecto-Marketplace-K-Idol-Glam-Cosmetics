@@ -5,14 +5,13 @@ import './estilos.css';
 export default function InicioSesion() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // Estado de inicio de sesión
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Enviar los datos del formulario al backend para el inicio de sesión
-        console.log('Datos de inicio de sesión:', { email, password });
-        // Lógica para enviar los datos al backend...
-
+        // Aquí iría la lógica de autenticación, si la autenticación es exitosa, actualizamos el estado de inicio de sesión
+        setIsLoggedIn(true);
         // Después de procesar el inicio de sesión exitoso, redirigir al usuario al home
         navigate('/home');
     };
@@ -33,9 +32,13 @@ export default function InicioSesion() {
                         </div>
                         <button type="submit">Iniciar Sesión</button>
                     </form>
-                    <p>¿No tienes una cuenta? <NavLink to="/registrarse">Regístrate</NavLink></p>
+                    {/* Renderizado condicional para ocultar los botones de registro e inicio de sesión si el usuario ha iniciado sesión */}
+                    {!isLoggedIn && (
+                        <p>¿No tienes una cuenta? <NavLink to="/registrarse">Regístrate</NavLink></p>
+                    )}
                 </div>
             </div>
         </div>
     );
 }
+

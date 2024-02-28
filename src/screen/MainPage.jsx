@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './mainStyle.css';
 
 import maquillaje from '../img/resultados.webp';
@@ -11,7 +12,6 @@ import productoDestacado from '../img/glitter.webp';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-
 const MainPage = () => {
     return (
         <div className="main-page-container">
@@ -19,6 +19,13 @@ const MainPage = () => {
             <p>¡Donde el mundo del K-pop y el maquillaje se encuentran!</p>
             <img src={maquillaje} alt="Resultados" className='borde'/>
             <p>Regístrate ahora para obtener acceso exclusivo a nuestros productos inspirados en los maquillajes de idols del K-pop.</p>
+            
+            {/* Botones de inicio de sesión y registro */}
+            <div className="auth-buttons">
+                <NavLink to="/registrarse" className="btn btn-primary">Registrarse</NavLink>
+                <NavLink to="/iniciar-sesion" className="btn btn-secondary">Iniciar Sesión</NavLink>
+            </div>
+            
             <div className="brand-description">
                 <h2>Sobre Nosotros</h2>
                 <p>K-Idol Glam Cosmetics es una marca de maquillaje inspirada en los estilos únicos y vibrantes de los idols del K-pop. Nuestros productos están diseñados para ayudarte a recrear esos looks deslumbrantes y expresar tu estilo individual.</p>
@@ -51,4 +58,3 @@ const MainPage = () => {
 }
 
 export default MainPage;
-

@@ -2,6 +2,19 @@ body{
     background-image: url('../img/Fondo.png');
 }
 
+/* Estilos para los botones de inicio de sesión y registro */
+.auth-buttons {
+    position: fixed; /* Posicionamiento fijo */
+    top: 10px; /* Ajusta la distancia desde la parte superior de la ventana del navegador según sea necesario */
+    right: 20px; /* Ajusta la distancia desde el borde derecho de la ventana del navegador según sea necesario */
+    z-index: 9999; /* Valor alto para asegurarse de que estén por encima de cualquier otro elemento */
+}
+
+/* Estilos adicionales para los botones */
+.auth-buttons a {
+    margin-right: 10px; /* Espacio entre los botones */
+}
+
 .main-page-container {
     max-width: 800px;
     margin: 0 auto;
