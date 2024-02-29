@@ -1,5 +1,8 @@
 .body1{
-    background-image: url('../img/Fondo.png');
+    background-image: url('../img/purple.jpg');
+    background-size: cover; /* La imagen se ajustará y cubrirá completamente el fondo */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
 }
 
 /* Estilos para los botones de inicio de sesión y registro */
