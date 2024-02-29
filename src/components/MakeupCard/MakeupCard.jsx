@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../../context/MakeupContext';
 import { NavLink } from 'react-router-dom';
+import './makeupCardStyle.css';
 
 
 export default function MakeupCard({ makeup }) {
@@ -38,27 +39,27 @@ export default function MakeupCard({ makeup }) {
 
 
     return (
-        <div className="makeup-card">
-            <img className="makeup-image" src={makeup.img} alt={makeup.name} />
-            <h2 className="makeup-name">{capitalizeFirstLetter(makeup.name)}</h2>
-            <div className="makeup-ingredients">
-                <p>Ingredientes: </p>
-                <ul>
-                    {makeup.ingredients.map((ingredient, index) => (
-                        <li key={index}>{capitalizeFirstLetter(ingredient)}</li>
-                    ))}
-                </ul>
+            <div className="makeup-card">
+                <img className="makeup-image" src={makeup.img} alt={makeup.name} />
+                <h2 className="makeup-name">{capitalizeFirstLetter(makeup.name)}</h2>
+                <div className="makeup-ingredients">
+                    <p>Ingredientes: </p>
+                    <ul>
+                        {makeup.ingredients.map((ingredient, index) => (
+                            <li key={index}>{capitalizeFirstLetter(ingredient)}</li>
+                        ))}
+                    </ul>
+                </div>
+                <p className="makeup-price">{formattedPrice}</p>
+                <div className="button-container">
+                    <NavLink to={`/makeup/${makeup.id}`} className="btn btn-info" onClick={handleVerMasClick}>
+                        👀 Ver más
+                    </NavLink>
+                    <button className="btn btn-danger" onClick={addToCart}>
+                        Añadir 🛒
+                    </button>
+                </div>
             </div>
-            <p className="makeup-price">{formattedPrice}</p>
-            <div className="button-container">
-                <NavLink to={`/makeup/${makeup.id}`} className="btn btn-info" onClick={handleVerMasClick}>
-                    👀 Ver más
-                </NavLink>
-                <button className="btn btn-danger" onClick={addToCart}>
-                    Añadir 🛒
-                </button>
-            </div>
-        </div>
     );
 }
 

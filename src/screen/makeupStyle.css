@@ -1,4 +1,9 @@
 /* Estilo para la tarjeta de detalles de maquillaje */
+.fondo2{
+    background-color: antiquewhite;
+    height: 80vh; /* Cubre toda la altura de la ventana del navegador */
+}
+
 .makeup-detail-card {
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -6,6 +11,8 @@
     margin: 100px auto; /* Modificar el margen para centrar la tarjeta */
     max-width: 1000px;
     display: flex;
+    margin-top: 65px; /* Mantener la misma posición de margen superior */
+
 }
 
 /* Estilo para la imagen de maquillaje (columna izquierda) */

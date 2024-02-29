@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/MakeupContext';
 import { Card, Button, Row, Col } from 'react-bootstrap';
-import './CartStyle.css';
+import './cartStyle.css';
 
 export default function Cart() {
     const { cart, calculateTotalPrice, setCart } = useContext(AppContext);
@@ -37,36 +37,38 @@ export default function Cart() {
     };
 
     return (
-        <Card className="cart">
-            <Card.Body>
-                <Card.Title>Detalles del pedido:</Card.Title>
-                {cart.map((makeup, index) => (
-                    <div key={index} className="makeup-cart">
-                        <Row>
-                            <Col xs={2}>
-                                <img src={makeup.img} alt={makeup.name} className="makeup-img" />
-                            </Col>
-                            <Col xs={7}>
-                                <div className="makeup-name-container">
-                                    <p>{makeup.name.charAt(0).toUpperCase() + makeup.name.slice(1)}</p>
-                                </div>
-                            </Col>
-                            <Col xs={3}>
-                                <div className="quantity-control">
-                                    <div className="makeup-price-container">
-                                        <p>{formatTotalPrice(makeup.price * makeup.quantity)}</p>
+        <div className='fondo'>
+            <Card className="cart">
+                <Card.Body className='cart-body'>
+                    <Card.Title>Detalles del pedido:</Card.Title>
+                    {cart.map((makeup, index) => (
+                        <div key={index} className="makeup-cart">
+                            <Row>
+                                <Col xs={2}>
+                                    <img src={makeup.img} alt={makeup.name} className="makeup-img" />
+                                </Col>
+                                <Col xs={7}>
+                                    <div className="makeup-name-container">
+                                        <p>{makeup.name.charAt(0).toUpperCase() + makeup.name.slice(1)}</p>
                                     </div>
-                                    <Button variant="danger" size="sm" onClick={() => decrementQuantity(makeup)}>-</Button>
-                                    <span>{makeup.quantity}</span>
-                                    <Button variant="primary" size="sm" onClick={() => incrementQuantity(makeup)}>+</Button>
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                ))}
-                <Card.Text className='total-text'>Total: {formatTotalPrice(calculateTotalPrice())}</Card.Text>
-                <Button variant="success">Ir a pagar</Button>
-            </Card.Body>
-        </Card>
+                                </Col>
+                                <Col xs={3}>
+                                    <div className="quantity-control">
+                                        <div className="makeup-price-container">
+                                            <p>{formatTotalPrice(makeup.price * makeup.quantity)}</p>
+                                        </div>
+                                        <Button variant="danger" size="sm" onClick={() => decrementQuantity(makeup)}>-</Button>
+                                        <span>{makeup.quantity}</span>
+                                        <Button variant="primary" size="sm" onClick={() => incrementQuantity(makeup)}>+</Button>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
+                    ))}
+                    <Card.Text className='total-text'>Total: {formatTotalPrice(calculateTotalPrice())}</Card.Text>
+                    <Button variant="success">Ir a pagar</Button>
+                </Card.Body>
+            </Card>
+        </div>
     );
 }

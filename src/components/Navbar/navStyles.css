@@ -16,6 +16,41 @@
     background-color: #77d6f3;
 }
 
+/* _Menu_*/
+
+/* Estilos para el menú desplegable */
+.dropdown{
+    left: -250px; /* Ajuste a la izquierda */
+}
+
+.dropdown-toggle {
+    background-color: #f8d4d4; 
+    color: #000000; 
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    background-color: #ffffff; 
+    border: 1px solid #ced4da; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* Estilos para los elementos del menú desplegable */
+.dropdown-item {
+    padding: 8px 20px; 
+    color: #cd6767; 
+    text-decoration:underline;
+}
+
+/* Estilos para los elementos del menú desplegable cuando están activos o seleccionados */
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #f8d4d4;
+    color: #000; 
+}
+
+
 /* Media query para dispositivos móviles */
 @media (max-width: 576px) {
     .nav {

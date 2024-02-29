@@ -1,5 +1,4 @@
 /* Estilos para la tarjeta de maquillaje */
-
 .makeup-card {
     width: 260px;
     display: inline-block;
@@ -10,7 +9,7 @@
     text-align: center;
     background-color: #fff;
     position: relative;
-    top: -175px;
+    top: -1px;
 }
 
 /* Estilos para la imagen del maquillaje */

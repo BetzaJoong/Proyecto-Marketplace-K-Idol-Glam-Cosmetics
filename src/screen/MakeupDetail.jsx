@@ -40,28 +40,30 @@ export default function MakeupDetail() {
     };
 
     return (
-        <div className="makeup-detail-card">
-            <img className="makeup-detail-image" src={selectedMakeup.img} alt={selectedMakeup.name} />
-            <div className="makeup-detail-info">
-                <h5 className="makeup-detail-title">{capitalizeFirstLetter(selectedMakeup.name)}</h5>
-                <p className="makeup-detail-desc">{capitalizeFirstLetter(selectedMakeup.desc)}</p>
-                <p className="makeup-detail-ingredients">
-                    <strong>Ingredientes:</strong>
-                </p>
-                <ul className="makeup-detail-ingredients">
-                    {selectedMakeup.ingredients.map((ingredient, index) => (
-                        <li key={index}>
-                            💄 {capitalizeFirstLetter(ingredient)}
-                        </li>
-                    ))}
-                </ul>
-                <p className="makeup-detail-price">
-                    <strong>Precio:</strong> {formattedPrice}
-                </p>
-                <div className="makeup-detail-button">
-                    <button className="makeup-detail-add-to-cart" onClick={addToCart}>
-                        Añadir 🛒
-                    </button>
+        <div className="fondo2">
+            <div className="makeup-detail-card">
+                <img className="makeup-detail-image" src={selectedMakeup.img} alt={selectedMakeup.name} />
+                <div className="makeup-detail-info">
+                    <h5 className="makeup-detail-title">{capitalizeFirstLetter(selectedMakeup.name)}</h5>
+                    <p className="makeup-detail-desc">{capitalizeFirstLetter(selectedMakeup.desc)}</p>
+                    <p className="makeup-detail-ingredients">
+                        <strong>Ingredientes:</strong>
+                    </p>
+                    <ul className="makeup-detail-ingredients">
+                        {selectedMakeup.ingredients.map((ingredient, index) => (
+                            <li key={index}>
+                                💄 {capitalizeFirstLetter(ingredient)}
+                            </li>
+                        ))}
+                    </ul>
+                    <p className="makeup-detail-price">
+                        <strong>Precio:</strong> {formattedPrice}
+                    </p>
+                    <div className="makeup-detail-button">
+                        <button className="makeup-detail-add-to-cart" onClick={addToCart}>
+                            Añadir 🛒
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
