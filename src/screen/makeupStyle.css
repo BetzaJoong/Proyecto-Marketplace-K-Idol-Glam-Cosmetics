@@ -1,7 +1,7 @@
 /* Estilo para la tarjeta de detalles de maquillaje */
 .fondo2{
     background-color: antiquewhite;
-    height: 80vh; /* Cubre toda la altura de la ventana del navegador */
+    height: 100vh; /* Cubre toda la altura de la ventana del navegador */
 }
 
 .makeup-detail-card {

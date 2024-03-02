@@ -6,24 +6,40 @@ import carroImage from '../../img/carrito-de-compras.png';
 import { AppContext } from '../../context/MakeupContext';
 import './navStyles.css';
 
-export default function MakeupNavbar() {
+export default function MakeupNavbar({ onCategoryChange }) {
     const { calculateTotalPrice, cart } = useContext(AppContext); // Obtén la función calculateTotalPrice y el carrito del contexto
 
-    // Estado para almacenar los elementos del menú
-    const [menuItems, setMenuItems] = useState([]);
+    // Estado para almacenar las categorías del menú
+    const [menuCategories, setMenuCategories] = useState([]);
+    const [error, setError] = useState(null);
 
     // Función para formatear el precio con el signo de pesos "$"
     const formatPrice = (price) => {
         return `$${price.toLocaleString('es-CO', { minimumFractionDigits: 0 })}`;
     };
 
-    // Cargar los elementos del menú al montar el componente
+    // Cargar las categorías del menú al montar el componente
     useEffect(() => {
-        fetch('/makeup.json') 
+        fetch('/makeup.json')
             .then((response) => response.json())
-            .then((data) => setMenuItems(data))
-            .catch((error) => console.error('Error loading makeup:', error));
+            .then((data) => {
+                const categories = data.reduce((acc, current) => {
+                    if (!acc.includes(current.category)) {
+                        acc.push(current.category);
+                    }
+                    return acc;
+                }, []);
+                setMenuCategories(categories);
+            })
+            .catch((error) => {
+                console.error('Error loading menu categories:', error);
+                setError(error);
+            });
     }, []);
+
+    if (error) {
+        return <div>Error: {error.message}</div>;
+    }
 
     return (
         <div className="nav bg-info text-light fixed-top">
@@ -45,9 +61,9 @@ export default function MakeupNavbar() {
                                 Menú
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                {menuItems.map((item) => (
-                                    <Dropdown.Item key={item.id}>
-                                        <NavLink to={`/makeup/${item.id}`} className="nav-link text-dark">{item.name}</NavLink>
+                                {menuCategories.map((category) => (
+                                    <Dropdown.Item key={category}>
+                                        <NavLink to={`/category/${category}`} className="nav-link text-dark" onClick={() => onCategoryChange(category)}>{category}</NavLink>
                                     </Dropdown.Item>
                                 ))}
                             </Dropdown.Menu>
@@ -71,3 +87,4 @@ export default function MakeupNavbar() {
         </div>
     );
 }
+

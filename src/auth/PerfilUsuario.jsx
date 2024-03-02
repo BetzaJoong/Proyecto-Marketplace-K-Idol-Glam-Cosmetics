@@ -39,18 +39,38 @@
 // }
 
 
+// PerfilUsuario.jsx
 import React from 'react';
 import { useAuth } from './authContext';
 
-export default function PerfilUsuario() {
-    const { usuario } = useAuth();
+export function PerfilUsuario() {
+    const { usuario, cambiarFotoPerfil, editarNombre, verFavoritos, logout } = useAuth();
+
+    const handleCambiarFotoPerfil = () => {
+        cambiarFotoPerfil();
+    };
+
+    const handleEditarNombre = () => {
+        editarNombre();
+    };
+
+    const handleVerFavoritos = () => {
+        verFavoritos();
+    };
+
+    const handleSalir = () => {
+        logout();
+    };
 
     return (
         <div className="perfil-usuario">
-            <img src={usuario.fotoPerfil} alt="Foto de Perfil" />
-            <h2>{usuario.nombre}</h2>
+            <img src={usuario?.fotoPerfil} alt="Foto de Perfil" />
+            <h2>{usuario?.nombre}</h2>
+            <button onClick={handleCambiarFotoPerfil}>Cambiar Foto de Perfil</button>
+            <button onClick={handleEditarNombre}>Editar Nombre</button>
             <button onClick={handleVerFavoritos}>Ver Favoritos</button>
             <button onClick={handleSalir}>Salir</button>
         </div>
     );
 }
+

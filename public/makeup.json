@@ -1,5 +1,6 @@
 [
     {
+        "category": "makeup",
         "desc": "Una base de maquillaje de alta definición que proporciona una cobertura impecable y natural, ideal para todo tipo de piel.",
         "id": "P001",
         "img": "https://th.bing.com/th/id/OIP.Rr10vsWT2Uf614OJAIbZUQHaHa?rs=1&pid=ImgDetMain",
@@ -10,9 +11,11 @@
             "Óxidos de hierro"
         ],
         "name": "Base de maquillaje",
-        "price": 5950
+        "price": 5950,
+        "likes": 0
     },
     {
+        "category": "makeup",
         "desc": "Una paleta de sombras con tonos nude o con glitter que te permite crear una variedad de looks desde naturales hasta ahumados intensos.",
         "id": "P002",
         "img": "https://th.bing.com/th/id/OIP.U9ND7D1-wjvH_1LaKNyaLAHaHa?rs=1&pid=ImgDetMain",
@@ -23,9 +26,11 @@
             "Polietileno"
         ],
         "name": "Paleta de Sombras",
-        "price": 7250
+        "price": 7250,
+        "likes": 0
     },
     {
+        "category": "makeup",
         "desc": "Un rubor en crema fácil de aplicar que proporciona un aspecto saludable y luminoso a tus mejillas durante todo el día.",
         "id": "P003",
         "img": "https://http2.mlstatic.com/D_NQ_NP_745586-MLM50172351948_062022-O.webp",
@@ -36,9 +41,11 @@
             "Colorantes"
         ],
         "name": "Rubor en Crema",
-        "price": 5990
+        "price": 5990,
+        "likes": 0
     },
     {
+        "category": "makeup",
         "desc": "Un labial líquido de acabado mate que ofrece una alta pigmentación y una larga duración sin resecar tus labios.",
         "id": "P004",
         "img": "https://falabella.scene7.com/is/image/Falabella/gsc_115525325_1155545_1?wid=800&hei=800&qlt=70",
@@ -49,9 +56,11 @@
             "Silica"
         ],
         "name": "Labial Líquido Mate",
-        "price": 9590
+        "price": 9590,
+        "likes": 0
     },
     {
+        "category": "makeup",
         "desc": "Un delineador en gel con glitter resistente al agua que garantiza un delineado preciso y de larga duración, ideal para looks intensos.",
         "id": "P005",
         "img": "https://cdn.shopify.com/s/files/1/0085/4327/3020/products/peripera-sugar-twinkle-liquid-sodapop.jpg?v=1624712173&width=300",
@@ -62,9 +71,11 @@
             "Tocoferol"
         ],
         "name": "Delineador Glitter",
-        "price": 6450
+        "price": 6450,
+        "likes": 0
     },
     {
+        "category": "skincare",
         "desc": "Un tónico suave exfoliante que elimina las células muertas de la piel, desobstruye los poros y suaviza la textura de la piel, dejándola más luminosa y uniforme.",
         "id": "P006",
         "img": "https://universoenlinea.com/wp-content/uploads/tratamiento-acne-aha-bha-pha.jpg",
@@ -75,6 +86,7 @@
             "Aloe vera"
         ],
         "name": "Tónico Exfoliante",
-        "price": 8500
+        "price": 8500,
+        "likes": 0
     }
 ]
