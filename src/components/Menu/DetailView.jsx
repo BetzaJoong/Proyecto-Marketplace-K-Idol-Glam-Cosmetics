@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import './detail.css'; // Importa el archivo CSS
+import './detail.css'; 
 
 const DetailView = () => {
     const { category } = useParams(); // Obtener la categoría de la URL

@@ -1,0 +1,48 @@
+/* mp.css */
+.publicaciones-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px; 
+    background-color: #cbf2e5; /* Color de fondo */
+    padding: 30px; /* Espaciado interno para mejorar la apariencia */
+}
+
+.publicacion {
+    width: calc(33.23% - 10px); /* Ancho reducido */
+    margin-bottom: 30px; /* Margen inferior aumentado */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #c9faeb;
+}
+
+.publicacion img {
+    max-width: 20%; /* Imagen al 100% del ancho de la tarjeta */
+    height: auto;
+    border-radius: 5px;
+}
+
+.publicacion h3 {
+    font-size: 16px; /* Tamaño de fuente reducido */
+    margin-top: 10px;
+}
+
+.publicacion p {
+    margin: 8px 0; /* Margen superior e inferior reducido */
+}
+
+.publicacion button {
+    background-color: #eb8ba0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.publicacion button:hover {
+    background-color: #0056b3;
+}

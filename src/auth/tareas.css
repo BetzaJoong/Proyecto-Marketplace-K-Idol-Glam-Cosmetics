@@ -1,0 +1,69 @@
+.perfil-administrador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 200px;
+}
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+}
+
+.perfil-image-container {
+    position: relative;
+}
+
+.perfil-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.edit-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+.lista-tareas {
+    margin-top: 20px;
+}
+
+.lista-tareas ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lista-tareas ul li {
+    margin-bottom: 10px;
+}
+
+.lista-tareas ul li button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lista-tareas ul li button:hover {
+    background-color: #0056b3;
+}
+
+
+.perfil-administrador {
+    text-align: center;
+}
+.perfil-administrador button {
+    margin: 9px; 
+}

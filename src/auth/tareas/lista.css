@@ -1,0 +1,22 @@
+.lista-tareas {
+  text-align: center; 
+  padding-top: 100px; 
+  min-height: 90vh; 
+  background-color: #ffe89d; 
+}
+
+.boton {
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 10px 20px; 
+  background-color: #fb9cb9; 
+  color: #1b1a1a;
+  text-decoration: none; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.boton:hover {
+  background-color: #f5caec;
+}

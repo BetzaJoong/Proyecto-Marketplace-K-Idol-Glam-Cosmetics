@@ -1,41 +1,4 @@
-// import React from "react";
-// import { Route, Routes } from "react-router-dom";
-// import Home from "./screen/Home/Home";
-// import MainPage from "./screen/MainPage";
-// import MakeupDetail from "./screen/MakeupDetail";
-// import Cart from "./screen/Cart";
-// import Error404 from "./screen/Error404";
-// import AppContext from "./context/MakeupContext";
-// import MakeupNavbar from "./components/Navbar/MakeupNavbar";
-// import Footer from "./components/Footer/Footer";
-// import Registro from "./auth/Registro";
-// import InicioSesion from "./auth/Inicio de sesion";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-// function App() {
-//     return (
-//         <AppContext>
-//             <div className="App">
-//                 <MakeupNavbar />
-//                 <Routes>
-//                     <Route index element={<MainPage />} />
-//                     <Route path="/home" element={<Home />} />
-//                     <Route path="/makeup/:id" element={<MakeupDetail />} />
-//                     <Route path="/carrito" element={<Cart />} />
-//                     <Route path="/registrarse" element={<Registro />} />
-//                     <Route path="/iniciar-sesion" element={<InicioSesion />} />
-//                     <Route path="*" element={<Error404 />} />
-//                 </Routes>
-//                 <Footer />
-//             </div>
-//         </AppContext>
-//     );
-// }
-
-// export default App;
-
-
+// App.jsx
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./screen/Home/Home";
@@ -49,6 +12,14 @@ import Footer from "./components/Footer/Footer";
 import Registro from "./auth/Registro";
 import InicioSesion from "./auth/Inicio de sesion";
 import DetailView from "../src/components/Menu/DetailView";
+import PerfilAdmin from "./auth/PerfilAdmin";
+import ListaTareas from "./auth/tareas/ListaTareas";
+import FormularioProductos from './auth/tareas/Formulario';
+import Publicaciones from './auth/tareas/Publicaciones';
+import ListaUsuarios from './auth/tareas/ListaUsuarios';
+import AtencionClientes from './auth/tareas/AtencionClientes';
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -65,11 +36,24 @@ function App() {
                 <Routes>
                     <Route index element={<MainPage />} />
                     <Route path="/home" element={<Home />} />
+                    <Route path="/registrarse" element={<Registro />} />
+                    <Route path="/iniciar-sesion" element={<InicioSesion />} />
+
+
                     <Route path="/makeup/:id" element={<MakeupDetail />} />
                     <Route path="/category/:category" element={<DetailView />} />
                     <Route path="/carrito" element={<Cart />} />
-                    <Route path="/registrarse" element={<Registro />} />
-                    <Route path="/iniciar-sesion" element={<InicioSesion />} />
+                    
+
+
+                    {/* Perfil admin */}
+                    <Route path="/perfil-administrador" element={<PerfilAdmin />} />
+                    <Route path="/lista-tareas" element={<ListaTareas />} />
+                    <Route path="/agregar-productos" element={<FormularioProductos />} />
+                    <Route path="/mis-publicaciones" element={<Publicaciones />} />
+                    <Route path="/usuarios" element={<ListaUsuarios />} />
+                    <Route path="/atencion-cliente" element={<AtencionClientes />} />
+
                     <Route path="*" element={<Error404 />} />
                 </Routes>
                 <Footer />
@@ -79,5 +63,4 @@ function App() {
 }
 
 export default App;
-
 

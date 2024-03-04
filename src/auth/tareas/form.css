@@ -1,0 +1,52 @@
+/* form.css */
+/* form.css */
+.formulario-publicacion {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    min-height: 60vh;
+    background-color: #cbf2e5; /* Color de fondo */
+    padding: 70px; /* Espaciado interno para mejorar la apariencia */
+}
+
+.formulario-publicacion {
+    width: 50%;
+    margin: auto;
+}
+
+.formulario-publicacion h2 {
+    margin-bottom: 20px;
+}
+
+.formulario-publicacion form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-publicacion label {
+    margin-bottom: 10px;
+}
+
+.formulario-publicacion input,
+.formulario-publicacion textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario-publicacion button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 25px;
+    background-color: #b35ad6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.formulario-publicacion button:hover {
+    background-color: #e398f2;
+}

@@ -1,0 +1,41 @@
+/* atencionclientes.css */
+
+.atencion-clientes {
+    margin-top: 100px;
+    width: 100%;
+    margin: auto;
+    min-height: 90vh;
+    background-color: #d2f1ae; /* Color de fondo */
+    padding: 120px; /* Espaciado interno para mejorar la apariencia */
+}
+
+.atencion-clientes table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.atencion-clientes th,
+.atencion-clientes td {
+    background-color: #b9f3de;
+    border: 1px solid #6ceba9;
+    padding: 8px;
+    text-align: center;
+}
+
+.atencion-clientes th {
+    background-color: #f2f2f2;
+}
+
+.atencion-clientes button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.atencion-clientes button:hover {
+    background-color: #0056b3;
+}

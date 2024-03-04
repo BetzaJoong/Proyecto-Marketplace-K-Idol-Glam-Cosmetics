@@ -11,6 +11,7 @@
             "Óxidos de hierro"
         ],
         "name": "Base de maquillaje",
+        "marca": "Romand&nd",
         "price": 5950,
         "likes": 0
     },
@@ -26,6 +27,7 @@
             "Polietileno"
         ],
         "name": "Paleta de Sombras",
+        "marca": "Romand&nd",
         "price": 7250,
         "likes": 0
     },
@@ -41,6 +43,7 @@
             "Colorantes"
         ],
         "name": "Rubor en Crema",
+        "marca": "Kaja",
         "price": 5990,
         "likes": 0
     },
@@ -56,6 +59,7 @@
             "Silica"
         ],
         "name": "Labial Líquido Mate",
+        "marca": "Peripera",
         "price": 9590,
         "likes": 0
     },
@@ -71,6 +75,7 @@
             "Tocoferol"
         ],
         "name": "Delineador Glitter",
+        "marca": "Peripera",
         "price": 6450,
         "likes": 0
     },
@@ -86,6 +91,7 @@
             "Aloe vera"
         ],
         "name": "Tónico Exfoliante",
+        "marca": "AHA-BHA",
         "price": 8500,
         "likes": 0
     }
