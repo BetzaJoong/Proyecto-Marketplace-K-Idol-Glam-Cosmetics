@@ -95,7 +95,7 @@ import { NavLink } from 'react-router-dom';
 import { Container, Dropdown } from 'react-bootstrap';
 import makeupImage from '../../img/Logo.png';
 import carroImage from '../../img/carrito-de-compras.png';
-import perfilDefaultImage from '../../img/glitter.webp'; // Imagen de perfil por defecto
+import perfilDefaultImage from '../../img/glitter.webp'; 
 import { AppContext } from '../../context/MakeupContext';
 import './navStyles.css';
 
@@ -170,13 +170,22 @@ export default function MakeupNavbar({ onCategoryChange, perfilImage }) {
                             </span>
                         </NavLink>
                     </div>
-                    <NavLink to="/perfil-administrador" className="nav-link text-light" style={{ fontSize: '20px' }}>
+                    {/* <NavLink to="/perfil-administrador" className="nav-link text-light" style={{ fontSize: '20px' }}>
                         <img
-                            src={perfilImage || perfilDefaultImage} // Usa la imagen de perfil proporcionada o la imagen por defecto
+                            src={perfilImage || perfilDefaultImage}
                             alt="Perfil Administrador"
                             style={{ width: '35px', height: '35px', marginRight: '10px' }}
                         />
                         Perfil Administrador
+                    </NavLink> */}
+
+                    <NavLink to="/perfil-usuario" className="nav-link text-light" style={{ fontSize: '20px' }}>
+                        <img
+                            src={perfilImage || perfilDefaultImage}
+                            alt="Perfil usuario"
+                            style={{ width: '35px', height: '35px', marginRight: '10px' }}
+                        />
+                        Perfil Usuario
                     </NavLink>
                 </div>
             </Container>

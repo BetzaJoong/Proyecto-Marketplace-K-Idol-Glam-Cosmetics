@@ -51,7 +51,7 @@ const MainPage = () => {
                         <img src={productoDestacado} alt="Producto Destacado" />
                         <h3>Delineador de Glitter</h3>
                         <p>Añade brillo a tu maquillaje, sin restos molestos que van cayendo como consecuencia del paso del tiempo. Puede ser usada en los párpados, uñas e incluso en los labios. </p>
-                        <h6 className='comprar'><i class="bi bi-bag-heart-fill"></i>Comprar Ahora<i class="bi bi-bag-heart-fill"></i></h6>
+                        <h6 className='comprar'><i class="bi bi-bag-heart-fill"></i>Registrate y compra ahora<i class="bi bi-bag-heart-fill"></i></h6>
                     </div>
                 </div>
             </div>

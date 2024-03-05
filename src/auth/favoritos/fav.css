@@ -1,0 +1,69 @@
+/* favoritos.css */
+
+.favoritos-container {
+    max-width: 2000px;
+    margin: auto;
+    padding: 100px;
+    border-radius: 10px;
+    min-height: 100vh; 
+    background-color: #d2f1ae;
+}
+
+.producto-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.producto-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.producto-info {
+    flex: 1;
+}
+
+.producto-nombre {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.producto-descripcion {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.empty-message {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 50px;
+    color: #999; /* Color de texto para el mensaje de lista vacía */
+}
+
+/* Estilo para el icono */
+.icono-corazon{
+    font-size: 25px;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Transición de color */
+}
+
+/* Estilos para cambiar el color al hacer hover */
+.icono-corazon:hover{
+    color: rgb(230, 133, 133); /* Cambiar a rojo al hacer hover */
+}
+
+/* Estilo para mover el icono */
+.acciones{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 10px;
+    margin-right: 80px;
+}

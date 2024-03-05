@@ -12,12 +12,19 @@ import Footer from "./components/Footer/Footer";
 import Registro from "./auth/Registro";
 import InicioSesion from "./auth/Inicio de sesion";
 import DetailView from "../src/components/Menu/DetailView";
-import PerfilAdmin from "./auth/PerfilAdmin";
-import ListaTareas from "./auth/tareas/ListaTareas";
-import FormularioProductos from './auth/tareas/Formulario';
-import Publicaciones from './auth/tareas/Publicaciones';
-import ListaUsuarios from './auth/tareas/ListaUsuarios';
-import AtencionClientes from './auth/tareas/AtencionClientes';
+
+
+import PerfilUsuario from './auth/PerfilUsuario'; 
+import Favoritos from './auth/favoritos/misfavoritos';
+
+
+
+// import PerfilAdmin from "./auth/PerfilAdmin";
+// import ListaTareas from "./auth/tareas/ListaTareas";
+// import FormularioProductos from './auth/tareas/Formulario';
+// import Publicaciones from './auth/tareas/Publicaciones';
+// import ListaUsuarios from './auth/tareas/ListaUsuarios';
+// import AtencionClientes from './auth/tareas/AtencionClientes';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,20 +46,19 @@ function App() {
                     <Route path="/registrarse" element={<Registro />} />
                     <Route path="/iniciar-sesion" element={<InicioSesion />} />
 
-
+                    <Route path="/perfil-usuario" element={<PerfilUsuario />} />
                     <Route path="/makeup/:id" element={<MakeupDetail />} />
                     <Route path="/category/:category" element={<DetailView />} />
                     <Route path="/carrito" element={<Cart />} />
-                    
-
+                    <Route path="/favoritos" element={<Favoritos />} />
 
                     {/* Perfil admin */}
-                    <Route path="/perfil-administrador" element={<PerfilAdmin />} />
+                    {/* <Route path="/perfil-administrador" element={<PerfilAdmin />} />
                     <Route path="/lista-tareas" element={<ListaTareas />} />
                     <Route path="/agregar-productos" element={<FormularioProductos />} />
                     <Route path="/mis-publicaciones" element={<Publicaciones />} />
                     <Route path="/usuarios" element={<ListaUsuarios />} />
-                    <Route path="/atencion-cliente" element={<AtencionClientes />} />
+                    <Route path="/atencion-cliente" element={<AtencionClientes />} /> */}
 
                     <Route path="*" element={<Error404 />} />
                 </Routes>

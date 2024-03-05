@@ -9,6 +9,7 @@ export function useAppContext() {
 export default function MakeupContextProvider({ children }) {
     const [makeup, setMakeup] = useState([]);
     const [cart, setCart] = useState([]);
+    const [favoritos, setFavoritos] = useState(new Set()); // Estado para almacenar los favoritos
 
     useEffect(() => {
         fetch('/makeup.json') 
@@ -22,11 +23,23 @@ export default function MakeupContextProvider({ children }) {
         return totalPrice;
     };
 
+    // Función para agregar un producto a los favoritos
+    const agregarFavorito = (producto) => {
+        const newFavoritos = new Set(favoritos);
+        newFavoritos.add(producto);
+        setFavoritos(newFavoritos);
+    };
+
+    // Función para eliminar un producto de los favoritos
+    const eliminarFavorito = (producto) => {
+        const newFavoritos = new Set(favoritos);
+        newFavoritos.delete(producto);
+        setFavoritos(newFavoritos);
+    };
+
     return (
-        <AppContext.Provider value={{ makeup, cart, setCart, calculateTotalPrice }}>
+        <AppContext.Provider value={{ makeup, cart, setCart, calculateTotalPrice, favoritos, agregarFavorito, eliminarFavorito }}>
             {children}
         </AppContext.Provider>
     );
 }
-
-
