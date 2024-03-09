@@ -5,9 +5,9 @@
     margin: auto;
     padding: 100px;
     border-radius: 10px;
-    min-height: 100vh; 
+    min-height: 100vh;
     background-color: #f8f9fa;
-    background: linear-gradient(to bottom, #c9fdc9, #c4fac7,  #f4e0d1);
+    background: linear-gradient(to bottom, #c9fdc9, #c4fac7, #f4e0d1);
 }
 
 .producto-card {
@@ -45,26 +45,49 @@
     font-size: 18px;
     text-align: center;
     margin-top: 50px;
-    color: #999; /* Color de texto para el mensaje de lista vacía */
+    color: #999;
+    /* Color de texto para el mensaje de lista vacía */
 }
 
 /* Estilo para el icono */
-.icono-corazon{
+.icono-corazon {
     font-size: 25px;
     cursor: pointer;
-    transition: color 0.3s ease; /* Transición de color */
+    transition: color 0.3s ease;
+    /* Transición de color */
 }
 
 /* Estilos para cambiar el color al hacer hover */
-.icono-corazon:hover{
-    color: rgb(230, 133, 133); /* Cambiar a rojo al hacer hover */
+.icono-corazon:hover {
+    color: rgb(230, 133, 133);
+    /* Cambiar a rojo al hacer hover */
 }
 
 /* Estilo para mover el icono */
-.acciones{
+.acciones {
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
     margin-top: 10px;
     margin-right: 80px;
+}
+
+
+@media (max-width: 576px) {
+    .producto-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .producto-img {
+        margin: 0 auto 10px;
+    }
+
+    .producto-info {
+        margin-bottom: 1px;
+    }
+
+    .acciones {
+        margin-right: -5px;
+    }
 }

@@ -6,17 +6,17 @@
 }
 
 .home section h3 {
-    font-size: 34px; 
-    color:  #050605;
-    margin-bottom: 20px; 
+    font-size: 34px;
+    color: #050605;
+    margin-bottom: 20px;
     margin-top: -180px;
     text-align: center;
 }
 
 /* Estilos para el buscador */
 .search-and-sort {
-    display: flex; 
-    justify-content: space-between; 
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -29,13 +29,13 @@
 /* Estilos para el campo de búsqueda */
 .search-and-sort input[type="text"] {
     background-color: rgb(166, 234, 163);
-    width: 250px; 
-    height: 30px; 
-    font-size: 14px; 
+    width: 250px;
+    height: 30px;
+    font-size: 14px;
     padding: 5px;
 }
 
-.search-and-sort select{
+.search-and-sort select {
     background-color: rgb(253, 239, 168);
 
 }
@@ -43,4 +43,28 @@
 .search-and-sort input[type="text"],
 .search-and-sort select {
     margin-right: 0px;
+}
+
+
+@media (max-width: 576px) {
+    .home section h3 {
+        margin-top: -50px;
+        font-size: 45px;
+    }
+
+    .search-and-sort input[type="text"] {
+        width: 300px;
+        font-size: 12px;
+    }
+
+    .search-and-sort {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-and-sort input[type="text"],
+    .search-and-sort select {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
 }

@@ -1,19 +1,21 @@
 /*__Diseños__ */
 
-.nav{
+.nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .nav-link img {
-    max-width: 40px; /* Ajusta el tamaño máximo según tus preferencias */
-    height: auto; /* Para mantener la proporción de la imagen */
+    max-width: 40px;
+    /* Ajusta el tamaño máximo según tus preferencias */
+    height: auto;
+    /* Para mantener la proporción de la imagen */
 }
 
 /* Cambiar el fondo al pasar el cursor sobre el enlace del carrito */
 .nav-link:hover.cart-link {
-    background-color: #77d6f3; 
+    background-color: #77d6f3;
 }
 
 /* Cambiar el fondo al pasar el cursor sobre el enlace del texto */
@@ -24,43 +26,44 @@
 /* _Menu_*/
 
 /* Estilos para el menú desplegable */
-.dropdown{
-    left: -90px; /* Ajuste a la izquierda */
+.dropdown {
+    left: -90px;
+    /* Ajuste a la izquierda */
 }
 
 .dropdown-toggle {
-    background-color: #f8d4d4; 
-    color: #000000; 
+    background-color: #f8d4d4;
+    color: #000000;
     border-radius: 5px;
 }
 
 .dropdown-menu {
-    background-color: #ffffff; 
-    border: 1px solid #ced4da; 
-    border-radius: 5px; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos para los elementos del menú desplegable */
 .dropdown-item {
-    padding: 8px 20px; 
-    color: #cd6767; 
-    text-decoration:underline;
+    padding: 8px 20px;
+    color: #cd6767;
+    text-decoration: underline;
 }
 
 /* Estilos para los elementos del menú desplegable cuando están activos o seleccionados */
 .dropdown-item.active,
 .dropdown-item:active {
     background-color: #f8d4d4;
-    color: #000; 
+    color: #000;
 }
 
 
 /* Media query para dispositivos móviles */
 @media (max-width: 576px) {
     .nav {
-        flex-direction: row; 
-        justify-content: space-around; 
+        flex-direction: row;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -73,5 +76,9 @@
         background-color: initial;
         font-size: 24px;
         margin-left: 10px;
+    }
+
+    .dropdown {
+        left: -20px;
     }
 }

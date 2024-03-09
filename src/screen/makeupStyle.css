@@ -38,9 +38,23 @@
     margin-bottom: 10px;
 }
 
+/* Descripción */
+.makeup-detail-desc {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Precio */
+.makeup-detail-price {
+    font-size: 15px;
+    font-weight: bold;
+}
+
 /* Estilo para la sección de ingredientes */
 .makeup-detail-ingredients {
     margin-top: 4px;
+    font-size: 15px;
 }
 
 .makeup-detail-ingredients li {

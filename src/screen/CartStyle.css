@@ -1,8 +1,9 @@
 /* Estilo para el contenedor principal del carrito */
 .fondo {
     background-color: #f8f9fa;
-    background: linear-gradient(to bottom, #e4fbfb, #e0c4fa,  #f2e8e1);    
-    height: 180vh; /* Cubre toda la altura de la ventana del navegador */
+    background: linear-gradient(to bottom, #e4fbfb, #e0c4fa, #f2e8e1);
+    height: 180vh;
+    /* Cubre toda la altura de la ventana del navegador */
 }
 
 .cart {
@@ -12,7 +13,8 @@
     padding: 15px;
     margin: 0 auto;
     max-width: 700px;
-    margin-top: 65px; /* Mantener la misma posición de margen superior */
+    margin-top: 65px;
+    /* Mantener la misma posición de margen superior */
 }
 
 /* Estilo para los detalles de cada producto de maquillaje en el carrito */
@@ -29,7 +31,7 @@
     border-radius: 5px;
 }
 
-.makeup-detail-card{
+.makeup-detail-card {
     background-color: rgb(240, 254, 255);
 }
 
@@ -78,43 +80,54 @@
     margin-top: 20px;
 }
 
-
-/* Media query para dispositivos móviles */
 @media (max-width: 576px) {
-    .cart {
-        padding: 90px 75px; 
-        margin-left: 0;
+    .fondo {
+        padding: 50px;
+    }
+
+    .makeup-cart {
+        flex-direction: column;
+        align-items: center;        
+        padding: 50px;
     }
 
     .makeup-img {
-        max-width: 350%;
+        max-width: 450%;
+        margin: -60px;
+        margin-bottom: 15px;
+    }
+
+    .makeup-details {
+        text-align: center;
+    }
+
+    .quantity-control {
+        margin-top: -29px;
     }
 
     .makeup-details p {
         font-size: 16px;
+        margin: -5px;
     }
-
-    .makeup-price-container {
-        margin-top: 10px; 
-    }
-
     .makeup-name-container {
-        margin-top: 15px;
-    } 
+        margin-top: -10px
+    }
 
-    .makeup-details .price {
-        font-size: 14px; 
+    .btn {
+        font-size: 16px;
+        padding: 0px 9px;
     }
 
     .quantity-control button {
-        margin: 0px; 
+        margin: 0 2px;
+        margin-left:auto;    
     }
 
+    .makeup-price-container .price {
+        font-size: 14px;
+    }
+    
     .total-text {
-        font-size: 16px; 
-    }
-
-    .cart .btn-success {
-        margin-top: 15px; 
+        font-size: 16px;
     }
 }
