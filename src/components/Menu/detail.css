@@ -31,13 +31,14 @@
 }
 
 .detail-container {
-    background-color: rgb(244, 210, 245); 
+    background-color: #f8f9fa;
+    background: linear-gradient(to bottom, #e4fbfb, #faf1c4,  #f2e8e1);
     min-height: 100vh; 
     padding: 20px;
 }
 
 /* Estilos para los encabezados h1 */
 .detail-container h1 {
-    margin-top: 50px; 
+    margin-top: 65px; 
 }
 

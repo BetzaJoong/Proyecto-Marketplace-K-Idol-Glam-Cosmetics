@@ -7,22 +7,27 @@
 
 /* Estilos para los botones de inicio de sesión y registro */
 .auth-buttons {
-    position: fixed; /* Posicionamiento fijo */
-    top: 10px; /* Ajusta la distancia desde la parte superior de la ventana del navegador según sea necesario */
-    right: 20px; /* Ajusta la distancia desde el borde derecho de la ventana del navegador según sea necesario */
-    z-index: 9999; /* Valor alto para asegurarse de que estén por encima de cualquier otro elemento */
+    position: fixed; 
+    top: 10px;
+    right: 20px; 
+    z-index: 9999; 
 }
 
 /* Estilos adicionales para los botones */
 .auth-buttons a {
-    margin-right: 10px; /* Espacio entre los botones */
+    margin-right: 20px; /* Espacio entre los botones */
+}
+
+.btn.btn-warning{
+    background-image: linear-gradient(to right, #FDD7E4, #FFDAB9);
 }
 
 .main-page-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 90px;
-    background-color: #ffffff;
+    background-color: #f8f9fa;
+    background: linear-gradient(to bottom, #f1d7ff, #faf1c4,  #f2e8e1);
 }
 
 .main-page-container img {
@@ -43,17 +48,20 @@
     /* Imagen de borde con efecto de redondeo */
 }
 
-h1 {
+h1{
+    background-image: linear-gradient(to right, rgb(237, 189, 130), rgb(241, 46, 215));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: underline;
-    font-size: 25px;
     text-align: center;
 }
 
-p {
-    color: rgb(57, 39, 53);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 18px;
+.parrafo{
+    color: rgb(45, 52, 52);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    padding: 20px;
     line-height: 1.5;
 }
 

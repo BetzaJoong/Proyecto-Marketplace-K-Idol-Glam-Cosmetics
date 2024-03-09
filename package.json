@@ -5,8 +5,8 @@
   "type": "commonjs",
   "scripts": {
     "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
-    "start:backend": "node server/server.js",
-    "start:frontend": "vite",
+    "start:backend": "nodemon server/server.js",
+    "start:frontend": "vite --port 5003",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -19,6 +19,7 @@
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.3",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",

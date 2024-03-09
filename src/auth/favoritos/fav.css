@@ -6,7 +6,8 @@
     padding: 100px;
     border-radius: 10px;
     min-height: 100vh; 
-    background-color: #d2f1ae;
+    background-color: #f8f9fa;
+    background: linear-gradient(to bottom, #c9fdc9, #c4fac7,  #f4e0d1);
 }
 
 .producto-card {

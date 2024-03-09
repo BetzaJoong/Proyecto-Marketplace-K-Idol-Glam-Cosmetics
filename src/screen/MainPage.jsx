@@ -16,20 +16,20 @@ const MainPage = () => {
     return (
         <div className='body1'>
             <div className="main-page-container">
-                <h1>Bienvenido a K-Idol Glam Cosmetics</h1>
-                <p>¡Donde el mundo del K-pop y el maquillaje se encuentran!</p>
+                <h1>¡Bienvenido a K-Idol Glam Cosmetics!</h1>
+                <p className='parrafo'>¡Donde el mundo del K-pop y el maquillaje se encuentran!</p>
                 <img src={maquillaje} alt="Resultados" className='borde' />
-                <p>Regístrate ahora para obtener acceso exclusivo a nuestros productos inspirados en los maquillajes de idols del K-pop.</p>
+                <p className='parrafo'>Regístrate ahora para obtener acceso exclusivo a nuestros productos inspirados en los maquillajes de idols del K-pop.</p>
 
                 {/* Botones de inicio de sesión y registro */}
                 <div className="auth-buttons">
-                    <NavLink to="/registrarse" className="btn btn-primary">Registrarse</NavLink>
-                    <NavLink to="/iniciar-sesion" className="btn btn-secondary">Iniciar Sesión</NavLink>
+                    <NavLink to="/registrarse" className="btn btn-warning">Registrarse</NavLink>
+                    <NavLink to="/iniciar-sesion" className="btn btn-warning">Iniciar Sesión</NavLink>
                 </div>
 
                 <div className="brand-description">
                     <h2>Sobre Nosotros</h2>
-                    <p>K-Idol Glam Cosmetics es una marca de maquillaje inspirada en los estilos únicos y vibrantes de los idols del K-pop. Nuestros productos están diseñados para ayudarte a recrear esos looks deslumbrantes y expresar tu estilo individual.</p>
+                    <p className='parrafo'>K-Idol Glam Cosmetics es una marca de maquillaje inspirada en los estilos únicos y vibrantes de los idols del K-pop. Nuestros productos están diseñados para ayudarte a recrear esos looks deslumbrantes y expresar tu estilo individual.</p>
                     <img src={idol} alt="Maquillaje de Idol 1" />
                 </div>
                 <div className="gallery">
@@ -50,7 +50,7 @@ const MainPage = () => {
                     <div className="product-item">
                         <img src={productoDestacado} alt="Producto Destacado" />
                         <h3>Delineador de Glitter</h3>
-                        <p>Añade brillo a tu maquillaje, sin restos molestos que van cayendo como consecuencia del paso del tiempo. Puede ser usada en los párpados, uñas e incluso en los labios. </p>
+                        <p className='parrafo'>Añade brillo a tu maquillaje, sin restos molestos que van cayendo como consecuencia del paso del tiempo. Puede ser usada en los párpados, uñas e incluso en los labios. </p>
                         <h6 className='comprar'><i class="bi bi-bag-heart-fill"></i>Registrate y compra ahora<i class="bi bi-bag-heart-fill"></i></h6>
                     </div>
                 </div>

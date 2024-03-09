@@ -21,7 +21,7 @@
 .header-title {
     font-size: 60px;
     color: rgb(11, 11, 11);
-    text-shadow: 0 0 9px #dba9d3;
+    background-image: linear-gradient(to right, #a608a9, rgb(155, 11, 131));
     font-weight: bold;
 }
 
@@ -31,7 +31,6 @@
     color: rgb(11, 11, 11);
     text-shadow: 0 0 9px #f8edf7;
     font-weight: bold;
-
 }
 
 .decoration-line {

@@ -35,7 +35,6 @@ function ListaUsuarios({ volver }) {
                     ))}
                 </tbody>
             </table>
-            <button onClick={volver}>Regresar a la lista de tareas</button>
         </div>
     );
 }

@@ -6,8 +6,9 @@
     width: 90%;
     margin: auto;
     margin-top: 30px; 
-    background-color: #cbf2e5; /* Color de fondo */
-    padding: 30px; /* Espaciado interno para mejorar la apariencia */
+    background-color: #f8f9fa;
+    background: linear-gradient(to bottom, #d1fdd5, #e0c4fa,  #f2e8e1);       
+     padding: 30px; /* Espaciado interno para mejorar la apariencia */
 }
 
 .publicacion {
@@ -16,7 +17,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #c9faeb;
+    background-color: #fcfcda;
 }
 
 .publicacion img {
@@ -44,5 +45,5 @@
 }
 
 .publicacion button:hover {
-    background-color: #0056b3;
+    background-color: #abcdf1;
 }

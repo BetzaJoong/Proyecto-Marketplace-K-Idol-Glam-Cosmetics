@@ -130,7 +130,7 @@ const DetailView = () => {
         if (category === "makeup") {
             return (
                 <div className="detail-container">
-                    <h1 style={{ color: "black" }}>Makeup</h1>
+                    <h1>Makeup</h1>
                     {products
                         .filter(product => product.category === "makeup")
                         .map(product => (
@@ -176,3 +176,5 @@ const DetailView = () => {
 };
 
 export default DetailView;
+
+

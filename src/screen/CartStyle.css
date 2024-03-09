@@ -1,6 +1,7 @@
 /* Estilo para el contenedor principal del carrito */
 .fondo {
-    background-color:rgb(214, 234, 251); /* Color de fondo */
+    background-color: #f8f9fa;
+    background: linear-gradient(to bottom, #e4fbfb, #e0c4fa,  #f2e8e1);    
     height: 180vh; /* Cubre toda la altura de la ventana del navegador */
 }
 
