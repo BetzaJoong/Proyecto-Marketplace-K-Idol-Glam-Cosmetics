@@ -133,7 +133,7 @@ function App() {
                     <Route path="/favoritos" element={<Favoritos />} />
 
                     {/* Perfil admin */}
-                    <Route path="/perfil-administrador" element={<PerfilAdmin />} />
+                    {/* <Route path="/perfil-administrador" element={<PerfilAdmin />} /> */}
                     <Route path="/lista-tareas" element={<ListaTareas />} />
                     <Route path="/agregar-productos" element={<FormularioProductos />} />
                     <Route path="/mis-publicaciones" element={<Publicaciones />} />

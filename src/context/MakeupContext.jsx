@@ -12,7 +12,7 @@ export default function MakeupContextProvider({ children }) {
     const [favoritos, setFavoritos] = useState(new Set()); // Estado para almacenar los favoritos
 
     useEffect(() => {
-        fetch('/makeup.json') 
+        fetch('/makeup.json')
             .then((response) => response.json())
             .then((data) => setMakeup(data))
             .catch((error) => console.error('Error loading makeup:', error));
@@ -32,9 +32,11 @@ export default function MakeupContextProvider({ children }) {
 
     // Función para eliminar un producto de los favoritos
     const eliminarFavorito = (producto) => {
-        const newFavoritos = new Set(favoritos);
-        newFavoritos.delete(producto);
-        setFavoritos(newFavoritos);
+        if (favoritos.has(producto)) { // Verificar si el producto está en los favoritos
+            const newFavoritos = new Set(favoritos);
+            newFavoritos.delete(producto);
+            setFavoritos(newFavoritos);
+        }
     };
 
     return (

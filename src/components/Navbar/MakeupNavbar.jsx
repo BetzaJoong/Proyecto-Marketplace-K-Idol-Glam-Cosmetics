@@ -170,23 +170,23 @@ export default function MakeupNavbar({ onCategoryChange, perfilImage }) {
                             </span>
                         </NavLink>
                     </div>
-                    <NavLink to="/perfil-administrador" className="nav-link text-light" style={{ fontSize: '20px' }}>
+                    {/* <NavLink to="/perfil-administrador" className="nav-link text-light" style={{ fontSize: '20px' }}>
                         <img
                             src={perfilImage || perfilDefaultImage}
                             alt="Perfil Administrador"
                             style={{ width: '35px', height: '35px', marginRight: '10px' }}
                         />
                         Perfil Administrador
-                    </NavLink>
+                    </NavLink> */}
 
-                    {/* <NavLink to="/perfil-usuario" className="nav-link text-light" style={{ fontSize: '20px' }}>
+                    <NavLink to="/perfil-usuario" className="nav-link text-light" style={{ fontSize: '20px' }}>
                         <img
                             src={perfilImage || perfilDefaultImage}
                             alt="Perfil usuario"
                             style={{ width: '35px', height: '35px', marginRight: '10px' }}
                         />
                         Perfil Usuario
-                    </NavLink> */}
+                    </NavLink>
                 </div>
             </Container>
         </div>
