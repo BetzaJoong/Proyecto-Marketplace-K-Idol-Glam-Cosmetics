@@ -18,7 +18,6 @@ function Publicaciones({ volver }) {
                     </div>
                 ))}
             </div>
-            <button onClick={volver}>Regresar a la lista de tareas</button>
         </div>
     );
 }

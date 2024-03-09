@@ -5,15 +5,18 @@
     justify-content: space-between;
     width: 90%;
     margin: auto;
-    margin-top: 30px; 
+    margin-top: 30px;
     background-color: #f8f9fa;
-    background: linear-gradient(to bottom, #d1fdd5, #e0c4fa,  #f2e8e1);       
-     padding: 30px; /* Espaciado interno para mejorar la apariencia */
+    background: linear-gradient(to bottom, #d1fdd5, #e0c4fa, #f2e8e1);
+    padding: 30px;
+    /* Espaciado interno para mejorar la apariencia */
 }
 
 .publicacion {
-    width: calc(33.23% - 10px); /* Ancho reducido */
-    margin-bottom: 30px; /* Margen inferior aumentado */
+    width: calc(33.23% - 10px);
+    /* Ancho reducido */
+    margin-bottom: 30px;
+    /* Margen inferior aumentado */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -21,18 +24,21 @@
 }
 
 .publicacion img {
-    max-width: 20%; /* Imagen al 100% del ancho de la tarjeta */
+    max-width: 20%;
+    /* Imagen al 100% del ancho de la tarjeta */
     height: auto;
     border-radius: 5px;
 }
 
 .publicacion h3 {
-    font-size: 16px; /* Tamaño de fuente reducido */
+    font-size: 16px;
+    /* Tamaño de fuente reducido */
     margin-top: 10px;
 }
 
 .publicacion p {
-    margin: 8px 0; /* Margen superior e inferior reducido */
+    margin: 8px 0;
+    /* Margen superior e inferior reducido */
 }
 
 .publicacion button {
@@ -46,4 +52,35 @@
 
 .publicacion button:hover {
     background-color: #abcdf1;
+}
+
+
+@media (max-width: 576px) {
+    .publicaciones-grid {
+        width: 100%;
+        margin-top: 70px;
+    }
+
+    .publicacion {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .publicacion img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .publicacion h3 {
+        font-size: 16px;
+    }
+
+    .publicacion p {
+        margin: 8px 0;
+        font-size: 16px;
+    }
+
+    .publicacion button {
+        width: 100%;
+    }
 }

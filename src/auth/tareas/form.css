@@ -4,8 +4,10 @@
     margin: auto;
     margin-top: 100px;
     min-height: 60vh;
-    background-color: #cbf2e5; /* Color de fondo */
-    padding: 70px; /* Espaciado interno para mejorar la apariencia */
+    background-color: #cbf2e5;
+    /* Color de fondo */
+    padding: 70px;
+    /* Espaciado interno para mejorar la apariencia */
 }
 
 .formulario-publicacion {
@@ -48,4 +50,31 @@
 
 .formulario-publicacion button:hover {
     background-color: #e398f2;
+}
+
+@media (max-width: 576px) {
+    .formulario-publicacion {
+        width: 100%;
+        margin-top: 80px;
+    }
+
+    .formulario-publicacion form {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .formulario-publicacion label {
+        width: 100%;
+    }
+
+    .formulario-publicacion input,
+    .formulario-publicacion textarea {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .formulario-publicacion button {
+        width: 100%;
+        margin-top: 10px;
+    }
 }

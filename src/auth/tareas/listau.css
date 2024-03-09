@@ -1,9 +1,9 @@
 /* listau.css */
 
 .lista-usuarios {
-    margin-top: 50px; 
-    padding: 100px; 
-    background-color: #f1fdf8; 
+    margin-top: 50px;
+    padding: 100px;
+    background-color: #f1fdf8;
     border-radius: 10px;
 }
 
@@ -13,13 +13,13 @@
 
 .lista-usuarios table {
     width: 100%;
-    border-collapse: collapse; 
+    border-collapse: collapse;
 }
 
 .lista-usuarios th,
 .lista-usuarios td {
     padding: 10px;
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #ccc;
 }
 
 .lista-usuarios th {
@@ -27,9 +27,9 @@
 }
 
 .lista-usuarios button {
-    background-color: #ef3431; 
-    color: #fff; 
-    border: none; 
+    background-color: #ef3431;
+    color: #fff;
+    border: none;
     border-radius: 5px;
     padding: 8px 16px;
     cursor: pointer;
@@ -38,4 +38,25 @@
 
 .lista-usuarios button:hover {
     background-color: #ec4a47;
+}
+
+
+@media (max-width: 576px) {
+    .lista-usuarios {
+        padding: 130px;
+    }
+
+    .lista-usuarios table {
+        font-size: 0.9em;
+    }
+
+    .lista-usuarios th,
+    .lista-usuarios td {
+        padding: 5px;
+    }
+
+    .lista-usuarios button {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
