@@ -8,7 +8,7 @@ function ListaTareas() {
             <h2>Lista de Tareas</h2>
             <ul>
                 <li>
-                    <Link to="/agregar-productos" className="boton">Agregar Productos</Link>
+                    <Link to="/publicaciones" className="boton">Agregar Productos</Link>
                 </li>
                 <li>
                     <Link to="/mis-publicaciones" className="boton">Mis Publicaciones</Link>

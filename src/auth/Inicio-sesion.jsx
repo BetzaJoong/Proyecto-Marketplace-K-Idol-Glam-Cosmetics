@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './estilos.css';
 
-export default function Registro() {
-    const [nombre, setNombre] = useState('');
+export default function InicioSesion() {
     const [email, setEmail] = useState('');
     const [contraseña, setContraseña] = useState('');
     const [error, setError] = useState('');
@@ -12,36 +11,32 @@ export default function Registro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('/registrarse', {
+            const response = await fetch('/iniciarsesion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ nombre, email, contraseña }),
+                body: JSON.stringify({ email, contraseña }),
             });
             if (response.ok) {
-                console.log('Usuario registrado exitosamente');
-                navigate('/iniciarsesion'); 
-            } else {
                 const data = await response.json();
-                setError(data.message || 'Error al registrar usuario');
+                localStorage.setItem('accessToken', data.accessToken);
+                navigate('/home');
+            } else {
+                setError('Credenciales incorrectas');
             }
         } catch (error) {
-            console.error('Error al registrar usuario:', error);
-            setError('Error al conectar con el servidor');
+            console.error('Error de inicio de sesión:', error);
+            setError('Error del servidor al iniciar sesión');
         }
     };
-
+    
     return (
         <div className="body2">
             <div className="login-register-container">
                 <div className="form-container">
-                    <h2>Registro</h2>
+                    <h2>Iniciar Sesión</h2>
                     <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label>Nombre:</label>
-                            <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
-                        </div>
                         <div className="form-group">
                             <label>Email:</label>
                             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -50,10 +45,12 @@ export default function Registro() {
                             <label>Contraseña:</label>
                             <input type="password" value={contraseña} onChange={(e) => setContraseña(e.target.value)} />
                         </div>
-                        <button type="submit">Registrarse</button>
+                        <button type="submit">Iniciar Sesión</button>
                     </form>
                     {error && <p>{error}</p>}
-                    <p>¿Ya tienes una cuenta? <NavLink to="/iniciarsesion">Inicia sesión</NavLink></p>
+                    {!error && (
+                        <p>¿No tienes una cuenta? <NavLink to="/registrarse">Regístrate</NavLink></p>
+                    )}
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@ const MainPage = () => {
                 {/* Botones de inicio de sesión y registro */}
                 <div className="auth-buttons">
                     <NavLink to="/registrarse" className="btn btn-warning">Registrarse</NavLink>
-                    <NavLink to="/iniciar-sesion" className="btn btn-warning">Iniciar Sesión</NavLink>
+                    <NavLink to="/iniciarsesion" className="btn btn-warning">Iniciar Sesión</NavLink>
                 </div>
 
                 <div className="brand-description">
