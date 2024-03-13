@@ -1,3 +1,4 @@
+// Registro.jsx
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './estilos.css';
@@ -12,7 +13,7 @@ export default function Registro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('/registrarse', {
+            const response = await fetch('http://localhost:5003/registrarse', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -21,9 +22,11 @@ export default function Registro() {
             });
             if (response.ok) {
                 console.log('Usuario registrado exitosamente');
-                navigate('/iniciarsesion'); 
+                navigate('/iniciosesion'); 
             } else {
-                const data = await response.json();
+                // Verificar si la respuesta no está vacía
+                const text = await response.text();
+                const data = text ? JSON.parse(text) : {};
                 setError(data.message || 'Error al registrar usuario');
             }
         } catch (error) {
@@ -53,7 +56,7 @@ export default function Registro() {
                         <button type="submit">Registrarse</button>
                     </form>
                     {error && <p>{error}</p>}
-                    <p>¿Ya tienes una cuenta? <NavLink to="/iniciarsesion">Inicia sesión</NavLink></p>
+                    <p>¿Ya tienes una cuenta? <NavLink to="/iniciosesion">Inicia sesión</NavLink></p>
                 </div>
             </div>
         </div>
