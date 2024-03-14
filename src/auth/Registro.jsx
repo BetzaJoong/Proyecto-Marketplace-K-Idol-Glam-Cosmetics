@@ -22,7 +22,7 @@ export default function Registro() {
             });
             if (response.ok) {
                 console.log('Usuario registrado exitosamente');
-                navigate('/iniciosesion'); 
+                navigate('/iniciarsesion'); 
             } else {
                 // Verificar si la respuesta no está vacía
                 const text = await response.text();
