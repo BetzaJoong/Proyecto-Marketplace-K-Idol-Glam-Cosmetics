@@ -11,10 +11,12 @@ import maquillaje4 from '../img/makeup hombre.jpg';
 import productoDestacado from '../img/glitter.webp';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import InicioNavbar from '../components/Navbar/InicioNavbar';
 
 const MainPage = () => {
     return (
         <div className='body1'>
+            <InicioNavbar title="Inicio"/>
             <div className="main-page-container">
                 <h1>¡Bienvenido a K-Idol Glam Cosmetics!</h1>
                 <p className='parrafo'>¡Donde el mundo del K-pop y el maquillaje se encuentran!</p>

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './estilos.css';
+import InicioNavbar from '../components/Navbar/InicioNavbar';
 
 export default function Registro() {
     const [nombre, setNombre] = useState('');
@@ -37,6 +38,7 @@ export default function Registro() {
 
     return (
         <div className="body2">
+            <InicioNavbar title="Registro"/>
             <div className="login-register-container">
                 <div className="form-container">
                     <h2>Registro</h2>
@@ -56,7 +58,7 @@ export default function Registro() {
                         <button type="submit">Registrarse</button>
                     </form>
                     {error && <p>{error}</p>}
-                    <p>¿Ya tienes una cuenta? <NavLink to="/iniciosesion">Inicia sesión</NavLink></p>
+                    <p>¿Ya tienes una cuenta? <NavLink to="/iniciarsesion">Inicia sesión</NavLink></p>
                 </div>
             </div>
         </div>

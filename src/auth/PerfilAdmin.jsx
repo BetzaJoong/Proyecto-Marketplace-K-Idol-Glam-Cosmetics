@@ -1,5 +1,4 @@
 import React from 'react';
-import { useAuth } from './authContext';
 import { Link } from 'react-router-dom';
 import "./tareas.css"; 
 

@@ -24,22 +24,18 @@ app.use(cors());
 app.post('/registrarse', async (req, res) => {
     try {
         const { nombre, email, contraseña } = req.body;
-        //Rol predeterminado sea "usuario"
         const rol = 'usuario';
-        // Valida los datos del usuario
         if (!nombre || !email || !contraseña) {
             return res.status(400).json({ message: 'Todos los campos son obligatorios' });
         }
-        // Verifica si el usuario ya está registrado
         const existingUser = await pool.query('SELECT * FROM usuarios WHERE email = $1', [email]);
         if (existingUser.rows.length > 0) {
             return res.status(409).json({ message: 'El usuario ya está registrado' });
         }
-        // Inserta el nuevo usuario en la base de datos
         const hashedPassword = await bcrypt.hash(contraseña, 10);
         const newUser = await pool.query(
             'INSERT INTO usuarios (nombre, email, contraseña, rol) VALUES ($1, $2, $3, $4) RETURNING *',
-            [nombre, email, hashedPassword, rol] // Aquí se establece el rol como "usuario"
+            [nombre, email, hashedPassword, rol]
         );
 
         const token = jwt.sign({ email: newUser.rows[0].email, rol: newUser.rows[0].rol }, process.env.JWT_SECRET);
@@ -64,15 +60,99 @@ app.post('/iniciarsesion', async (req, res) => {
         if (!validPassword) {
             return res.status(401).send('Contraseña incorrecta');
         }
-
+        
+        // Generar token de acceso
         const token = jwt.sign({ email: user.rows[0].email, rol: user.rows[0].rol }, process.env.JWT_SECRET);
 
+        // Devolver el token en la respuesta
         res.json({ accessToken: token });
     } catch (error) {
         console.error('Error al iniciar sesión:', error.message);
         res.status(500).send('Error del servidor al iniciar sesión');
     }
 });
+
+
+// Obtener perfil de usuario
+app.get('/perfil', async (req, res) => {
+    try {
+        // Verificar si se proporciona un token en el encabezado de autorización
+        if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
+            return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
+        }
+        
+        // Extraer el token del encabezado de autorización
+        const token = req.headers.authorization.split(' ')[1];
+
+        // Verificar y decodificar el token
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+        // Consultar la base de datos para obtener el usuario correspondiente al token decodificado
+        const user = await pool.query('SELECT nombre, email, rol FROM usuarios WHERE email = $1', [decoded.email]);
+
+        // Verificar si se encontró un usuario
+        if (user.rows.length === 0) {
+            return res.status(404).json({ message: 'Usuario no encontrado' });
+        }
+
+        // Devolver el perfil del usuario con los campos deseados
+        res.json(user.rows[0]);
+    } catch (error) {
+        // Manejar errores de verificación del token
+        if (error.name === 'JsonWebTokenError') {
+            return res.status(401).json({ message: 'Token de autenticación inválido' });
+        }
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({ message: 'Token de autenticación expirado' });
+        }
+        
+        // Manejar otros errores
+        console.error('Error al obtener perfil de usuario:', error.message);
+        res.status(500).send('Error del servidor al obtener perfil de usuario');
+    }
+});
+
+
+
+// Obtener perfil de usuario
+// app.get('/perfil', async (req, res) => {
+//     try {
+//         // Verificar si se proporciona un token en el encabezado de autorización
+//         if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
+//             return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
+//         }
+        
+//         // Extraer el token del encabezado de autorización
+//         const token = req.headers.authorization.split(' ')[1];
+
+//         // Verificar y decodificar el token
+//         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+//         // Consultar la base de datos para obtener el usuario correspondiente al token decodificado
+//         const user = await pool.query('SELECT nombre, email, rol FROM usuarios WHERE email = $1', [decoded.email]);
+
+//         // Verificar si se encontró un usuario
+//         if (user.rows.length === 0) {
+//             return res.status(404).json({ message: 'Usuario no encontrado' });
+//         }
+
+//         // Devolver el perfil del usuario con los campos deseados
+//         res.json(user.rows[0]);
+//     } catch (error) {
+//         // Manejar errores de verificación del token
+//         if (error.name === 'JsonWebTokenError') {
+//             return res.status(401).json({ message: 'Token de autenticación inválido' });
+//         }
+//         if (error.name === 'TokenExpiredError') {
+//             return res.status(401).json({ message: 'Token de autenticación expirado' });
+//         }
+        
+//         // Manejar otros errores
+//         console.error('Error al obtener perfil de usuario:', error.message);
+//         res.status(500).send('Error del servidor al obtener perfil de usuario');
+//     }
+// });
+
 
 // Obtener todos los usuarios registrados
 app.get('/usuarios', async (req, res) => {
