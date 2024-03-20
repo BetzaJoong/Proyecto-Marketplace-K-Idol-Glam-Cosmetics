@@ -1,20 +1,13 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Container, Dropdown } from 'react-bootstrap';
 import makeupImage from '../../img/Logo.png';
-import carroImage from '../../img/carrito-de-compras.png';
 import perfilDefaultImage from '../../img/glitter.webp';
-import { AppContext } from '../../context/MakeupContext';
 import './navStyles.css';
 
-export default function MakeupNavbar({ onCategoryChange, perfilImage }) {
-    const { calculateTotalPrice, cart } = useContext(AppContext);
+export default function AdminNavbar({ loggedIn, usuario, perfilImage }) {
     const [menuCategories, setMenuCategories] = useState([]);
     const [error, setError] = useState(null);
-
-    const formatPrice = (price) => {
-        return `$${price.toLocaleString('es-CO', { minimumFractionDigits: 0 })}`;
-    };
 
     useEffect(() => {
         fetch('/makeup.json')
@@ -68,26 +61,16 @@ export default function MakeupNavbar({ onCategoryChange, perfilImage }) {
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    <div className="d-flex align-items-center">
-                        <NavLink to="/carrito" className="nav-link text-light cart-link" style={{ fontSize: '30px' }}>
+                    {loggedIn && usuario && usuario.rol === 'admin' && (
+                        <NavLink to="/perfil-administrador" className="nav-link text-light" style={{ fontSize: '20px' }}>
                             <img
-                                src={carroImage}
-                                alt="Carro"
-                                style={{ width: '35px', height: '35px', marginBottom: '10px' }}
+                                src={perfilImage || perfilDefaultImage}
+                                alt="Perfil Administrador"
+                                style={{ width: '35px', height: '35px', marginRight: '10px' }}
                             />
-                            <span className="cart-text">
-                                {cart.length > 0 && formatPrice(calculateTotalPrice())}
-                            </span>
+                            Perfil Administrador
                         </NavLink>
-                    </div>
-                    <NavLink to="/perfil-usuario" className="nav-link text-light" style={{ fontSize: '20px' }}>
-                        <img
-                            src={perfilImage || perfilDefaultImage}
-                            alt="Perfil usuario"
-                            style={{ width: '35px', height: '35px', marginRight: '10px' }}
-                        />
-                        Perfil Usuario
-                    </NavLink>
+                    )}
                 </div>
             </Container>
         </div>

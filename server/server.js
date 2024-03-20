@@ -113,46 +113,103 @@ app.get('/perfil', async (req, res) => {
 });
 
 
+// Endpoint para obtener todos los usuarios registrados (solo accesible para administradores)
+app.get('/adminusuario', async (req, res) => {
+    try {
+        // Verificar si se proporciona un token en el encabezado de autorización
+        if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
+            return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
+        }
 
-// Obtener perfil de usuario
-// app.get('/perfil', async (req, res) => {
-//     try {
-//         // Verificar si se proporciona un token en el encabezado de autorización
-//         if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
-//             return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
-//         }
+        // Extraer el token del encabezado de autorización
+        const token = req.headers.authorization.split(' ')[1];
+
+        // Verificar y decodificar el token para obtener el usuario
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         
-//         // Extraer el token del encabezado de autorización
-//         const token = req.headers.authorization.split(' ')[1];
+        // Verificar si el usuario tiene rol de administrador
+        if (decoded.rol !== 'admin') {
+            return res.status(403).json({ message: 'Acceso denegado. Este endpoint es solo para administradores' });
+        }
 
-//         // Verificar y decodificar el token
-//         const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        // Obtener todos los usuarios registrados
+        const result = await pool.query('SELECT id, nombre, email, rol FROM usuarios');
+        const usuarios = result.rows;
+        res.json(usuarios);
+    } catch (error) {
+        console.error('Error al obtener usuarios:', error.message);
+        res.status(500).send('Error del servidor al obtener usuarios');
+    }
+});
 
-//         // Consultar la base de datos para obtener el usuario correspondiente al token decodificado
-//         const user = await pool.query('SELECT nombre, email, rol FROM usuarios WHERE email = $1', [decoded.email]);
 
-//         // Verificar si se encontró un usuario
-//         if (user.rows.length === 0) {
-//             return res.status(404).json({ message: 'Usuario no encontrado' });
-//         }
+// Endpoint para agregar un producto a los favoritos de un usuario
+app.post('/favoritos/agregar', async (req, res) => {
+    try {
+        // Verificar si se proporciona un token en el encabezado de autorización
+        if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
+            return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
+        }
 
-//         // Devolver el perfil del usuario con los campos deseados
-//         res.json(user.rows[0]);
-//     } catch (error) {
-//         // Manejar errores de verificación del token
-//         if (error.name === 'JsonWebTokenError') {
-//             return res.status(401).json({ message: 'Token de autenticación inválido' });
-//         }
-//         if (error.name === 'TokenExpiredError') {
-//             return res.status(401).json({ message: 'Token de autenticación expirado' });
-//         }
+        // Extraer el token del encabezado de autorización
+        const token = req.headers.authorization.split(' ')[1];
+
+        // Verificar y decodificar el token para obtener el usuario
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         
-//         // Manejar otros errores
-//         console.error('Error al obtener perfil de usuario:', error.message);
-//         res.status(500).send('Error del servidor al obtener perfil de usuario');
-//     }
-// });
+        // Verificar si el producto ya está en los favoritos del usuario
+        const { productId } = req.body;
+        const result = await pool.query(
+            'SELECT * FROM favoritos WHERE usuario_id = $1 AND producto_id = $2',
+            [decoded.userId, productId]
+        );
 
+        if (result.rows.length > 0) {
+            return res.status(409).json({ message: 'El producto ya está en los favoritos del usuario' });
+        }
+
+        // Agregar el producto a los favoritos del usuario
+        await pool.query(
+            'INSERT INTO favoritos (usuario_id, producto_id) VALUES ($1, $2)',
+            [decoded.userId, productId]
+        );
+
+        res.status(201).json({ message: 'Producto agregado a favoritos correctamente' });
+    } catch (error) {
+        // Manejar errores
+        console.error('Error al agregar producto a favoritos:', error.message);
+        res.status(500).send('Error del servidor al agregar producto a favoritos');
+    }
+});
+
+// Endpoint para obtener los favoritos de un usuario
+app.get('/favoritos', async (req, res) => {
+    try {
+        // Verificar si se proporciona un token en el encabezado de autorización
+        if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
+            return res.status(401).json({ message: 'Token de autenticación no proporcionado' });
+        }
+
+        // Extraer el token del encabezado de autorización
+        const token = req.headers.authorization.split(' ')[1];
+
+        // Verificar y decodificar el token para obtener el usuario
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        
+        // Obtener los productos favoritos del usuario
+        const result = await pool.query(
+            'SELECT * FROM favoritos WHERE usuario_id = $1',
+            [decoded.userId]
+        );
+
+        const favoritos = result.rows.map(row => row.producto_id);
+        res.json({ favoritos });
+    } catch (error) {
+        // Manejar errores
+        console.error('Error al obtener favoritos:', error.message);
+        res.status(500).send('Error del servidor al obtener favoritos');
+    }
+});
 
 // Obtener todos los usuarios registrados
 app.get('/usuarios', async (req, res) => {
@@ -169,6 +226,7 @@ app.get('/usuarios', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor en ejecución en el puerto ${PORT}`);
 });
+
 
 
 

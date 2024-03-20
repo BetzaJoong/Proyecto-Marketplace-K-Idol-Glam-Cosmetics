@@ -13,8 +13,11 @@
   background-image: linear-gradient(to right, #E6E6FA, #FFC0CB);
   color: #1b1a1a;
   text-decoration: none; 
-  border: 2px solid #faf0f0;
+  border: 3px solid #ffffff;
   border-radius: 5px; 
   cursor: pointer; 
 }
 
+.lista-tareas ul {
+  list-style-type: none;
+}

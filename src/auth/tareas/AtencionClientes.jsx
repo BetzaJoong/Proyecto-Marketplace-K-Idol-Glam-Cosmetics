@@ -21,7 +21,6 @@ function AtencionClientes({ volver }) {
                     </tr>
                 </tbody>
             </table>
-            <button onClick={volver}>Regresar a la lista de tareas</button>
         </div>
     );
 }

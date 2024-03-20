@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './menuStyles.css';
+
 
 export default function Menu() {
     const [categories, setCategories] = useState([]);
@@ -40,3 +40,4 @@ export default function Menu() {
         </div>
     );
 }
+

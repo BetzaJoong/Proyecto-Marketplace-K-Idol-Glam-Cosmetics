@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import InicioNavbar from '../components/Navbar/InicioNavbar';
+import AdminNavbar from '../components/Navbar/AdminNavbar';
 
 import './estilos.css';
 
@@ -13,7 +13,7 @@ export default function InicioSesion() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5003/iniciarsesion', { 
+            const response = await fetch('http://localhost:5003/adminusuario', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -23,7 +23,13 @@ export default function InicioSesion() {
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem('accessToken', data.accessToken);
-                navigate('/home');
+                // Verificar si el usuario es administrador o no
+                const decodedToken = parseJwt(data.accessToken);
+                if (decodedToken.rol === 'admin') {
+                    navigate('/perfil-administrador');
+                } else {
+                    navigate('/home');
+                }
             } else {
                 const errorMessage = await response.text(); // Obtener el mensaje de error del servidor
                 setError(errorMessage || 'Credenciales incorrectas');
@@ -34,15 +40,24 @@ export default function InicioSesion() {
         }
     };
 
+    // Función para decodificar el token JWT
+    const parseJwt = (token) => {
+        try {
+            return JSON.parse(atob(token.split('.')[1]));
+        } catch (e) {
+            return null;
+        }
+    };
+
     return (
         <div className="body2">
-            <InicioNavbar title = "Inicio de Sesion"/>
+            <AdminNavbar title="Inicio de Sesion Admin" />
             <div className="login-register-container">
                 <div className="form-container">
                     <h2>Iniciar Sesión</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label>Email:</label> 
+                            <label>Email:</label>
                             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                         </div>
                         <div className="form-group">
@@ -60,7 +75,3 @@ export default function InicioSesion() {
         </div>
     );
 }
-
-
-
-

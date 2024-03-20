@@ -24,25 +24,24 @@
 }
 
 /* _Menu_*/
-
 /* Estilos para el menú desplegable */
 .dropdown {
     left: -90px;
-    /* Ajuste a la izquierda */
 }
 
 .dropdown-toggle {
-    background-color: #f8d4d4;
+    background-color: #f5b8b8;
     color: #000000;
     border-radius: 5px;
 }
 
 .dropdown-menu {
-    background-color: #ffffff;
+    background-color: #f7c4c4;
     border: 1px solid #ced4da;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Estilos para los elementos del menú desplegable */
 .dropdown-item {

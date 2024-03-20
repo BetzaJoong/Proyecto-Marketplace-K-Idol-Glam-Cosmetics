@@ -13,7 +13,6 @@ function Publicaciones({ volver }) {
                         <img src={publicacion.img} alt={publicacion.name} />
                         <h3>{publicacion.name}</h3>
                         <p>Precio: {publicacion.price}</p>
-                        {/* Agrega más detalles de la publicación si lo deseas */}
                         <button onClick={() => editarPublicacion(publicacion.id)}>Editar</button>
                     </div>
                 ))}
