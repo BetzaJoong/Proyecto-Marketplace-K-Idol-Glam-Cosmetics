@@ -61,8 +61,7 @@ export default function AdminNavbar({ loggedIn, usuario, perfilImage }) {
                             </Dropdown.Menu>
                         </Dropdown>
                     </div>
-                    {loggedIn && usuario && usuario.rol === 'admin' && (
-                        <NavLink to="/perfil-administrador" className="nav-link text-light" style={{ fontSize: '20px' }}>
+                        <NavLink to="/perfil-admin" className="nav-link text-light" style={{ fontSize: '20px' }}>
                             <img
                                 src={perfilImage || perfilDefaultImage}
                                 alt="Perfil Administrador"
@@ -70,7 +69,6 @@ export default function AdminNavbar({ loggedIn, usuario, perfilImage }) {
                             />
                             Perfil Administrador
                         </NavLink>
-                    )}
                 </div>
             </Container>
         </div>

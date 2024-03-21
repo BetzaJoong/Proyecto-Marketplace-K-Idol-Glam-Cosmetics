@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./listau.css"; 
 
 // Esto es un ejemplo
@@ -10,8 +10,13 @@ const usuarios = [
 ];
 
 function ListaUsuarios({ volver }) {
+    const [listaUsuarios, setListaUsuarios] = useState(usuarios);
+
     const eliminarUsuario = (id) => {
-        // Lógica para eliminar usuario
+        // Filtrar la lista de usuarios para obtener una nueva lista que excluya el usuario con el ID dado
+        const nuevaListaUsuarios = listaUsuarios.filter(usuario => usuario.id !== id);
+        // Actualizar el estado con la nueva lista de usuarios
+        setListaUsuarios(nuevaListaUsuarios);
     };
 
     return (
@@ -26,7 +31,7 @@ function ListaUsuarios({ volver }) {
                     </tr>
                 </thead>
                 <tbody>
-                    {usuarios.map((usuario, index) => (
+                    {listaUsuarios.map((usuario, index) => (
                         <tr key={index}>
                             <td>{usuario.correo}</td>
                             <td>{usuario.nombre}</td>

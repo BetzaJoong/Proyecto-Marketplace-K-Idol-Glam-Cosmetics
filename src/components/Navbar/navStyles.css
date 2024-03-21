@@ -65,10 +65,10 @@
         justify-content: space-around;
         align-items: center;
     }
-
-    .nav-link {
-        padding: 10px;
+    .nav .nav-link {
+        font-size: 10px !important;
     }
+
 
     .nav-link.cart-link:hover,
     .nav-link.text-link:hover {

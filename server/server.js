@@ -21,11 +21,36 @@ app.use(express.json());
 app.use(cors());
 
 // Endpoint de registro
+// app.post('/registrarse', async (req, res) => {
+//     try {
+//         const { nombre, email, contraseña } = req.body;
+//         const rol = 'usuario';
+//         if (!nombre || !email || !contraseña) {
+//             return res.status(400).json({ message: 'Todos los campos son obligatorios' });
+//         }
+//         const existingUser = await pool.query('SELECT * FROM usuarios WHERE email = $1', [email]);
+//         if (existingUser.rows.length > 0) {
+//             return res.status(409).json({ message: 'El usuario ya está registrado' });
+//         }
+//         const hashedPassword = await bcrypt.hash(contraseña, 10);
+//         const newUser = await pool.query(
+//             'INSERT INTO usuarios (nombre, email, contraseña, rol) VALUES ($1, $2, $3, $4) RETURNING *',
+//             [nombre, email, hashedPassword, rol]
+//         );
+
+//         const token = jwt.sign({ email: newUser.rows[0].email, rol: newUser.rows[0].rol }, process.env.JWT_SECRET);
+
+//         res.json({ usuario: newUser.rows[0], accessToken: token });
+//     } catch (error) {
+//         console.error('Error al registrar usuario:', error.message);
+//         res.status(500).send('Error del servidor al registrar usuario');
+//     }
+// });
+
 app.post('/registrarse', async (req, res) => {
     try {
-        const { nombre, email, contraseña } = req.body;
-        const rol = 'usuario';
-        if (!nombre || !email || !contraseña) {
+        const { nombre, email, contraseña, rol } = req.body; // Obtén el rol del cuerpo de la solicitud
+        if (!nombre || !email || !contraseña || !rol) {
             return res.status(400).json({ message: 'Todos los campos son obligatorios' });
         }
         const existingUser = await pool.query('SELECT * FROM usuarios WHERE email = $1', [email]);
@@ -35,7 +60,7 @@ app.post('/registrarse', async (req, res) => {
         const hashedPassword = await bcrypt.hash(contraseña, 10);
         const newUser = await pool.query(
             'INSERT INTO usuarios (nombre, email, contraseña, rol) VALUES ($1, $2, $3, $4) RETURNING *',
-            [nombre, email, hashedPassword, rol]
+            [nombre, email, hashedPassword, rol] // Usa el rol proporcionado por el usuario en la solicitud
         );
 
         const token = jwt.sign({ email: newUser.rows[0].email, rol: newUser.rows[0].rol }, process.env.JWT_SECRET);
@@ -46,6 +71,7 @@ app.post('/registrarse', async (req, res) => {
         res.status(500).send('Error del servidor al registrar usuario');
     }
 });
+
 
 // Endpoint de inicio de sesión
 app.post('/iniciarsesion', async (req, res) => {

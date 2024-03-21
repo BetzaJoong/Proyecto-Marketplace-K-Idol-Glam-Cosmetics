@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import InicioNavbar from '../components/Navbar/InicioNavbar';
 
@@ -33,6 +33,13 @@ export default function InicioSesion() {
             setError('Error del servidor al iniciar sesión');
         }
     };
+
+    useEffect(() => {
+        // Cada vez que el componente se monte o actualice, hacer scroll al principio de la página
+        window.scrollTo(0, 0);
+    }, []); // El array vacío como segundo argumento asegura que este efecto solo se ejecute una vez, después de que el componente se monte
+
+
 
     return (
         <div className="body2">

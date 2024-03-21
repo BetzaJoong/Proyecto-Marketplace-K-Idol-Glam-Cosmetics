@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../context/MakeupContext';
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import './cartStyle.css';
@@ -35,6 +35,12 @@ export default function Cart() {
         // Formatear el precio sin decimales y con punto como separador de miles
         return price.toLocaleString('es-CL', { style: 'currency', currency: 'CLP', minimumFractionDigits: 0 });
     };
+
+    useEffect(() => {
+        // Cada vez que el componente se monte o actualice, hacer scroll al principio de la página
+        window.scrollTo(0, 0);
+    }, []); // El array vacío como segundo argumento asegura que este efecto solo se ejecute una vez, después de que el componente se monte
+
 
     return (
         <div className='fondo'>

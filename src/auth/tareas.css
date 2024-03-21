@@ -3,39 +3,27 @@
     flex-direction: column;
     align-items: center;
     padding: 200px;
-}
+    max-width: 400px;
+    margin: 170px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 
-.perfil-info {
-    display: flex;
-    align-items: center;
-}
-
-.perfil-image-container {
-    position: relative;
-}
-
-.perfil-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.edit-button {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
 }
 
 h2 {
     margin-top: 10px;
 }
 
-.lista-tareas {
-    margin-top: 20px;
+.lista-tareas-button {
+    background-color: #f4b9f7;
+    color: rgb(28, 26, 26);
+    border: none;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .lista-tareas ul {
@@ -60,10 +48,24 @@ h2 {
     background-color: #0056b3;
 }
 
-
 .perfil-administrador {
     text-align: center;
 }
+
 .perfil-administrador button {
-    margin: 9px; 
+    margin: 9px;
+}
+
+.salir-button {
+    background-color: #f4b9f7;
+    color: rgb(28, 26, 26);
+    border: none;
+    padding: 10px 20px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.perfil-admin button:hover {
+    background-image: linear-gradient(to right, #f7a2ca, #fdcbcb);
 }
