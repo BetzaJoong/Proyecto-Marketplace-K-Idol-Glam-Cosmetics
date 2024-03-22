@@ -1,12 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './authContext';
+import { useAppContext } from '../context/MakeupContext';
 import { Link } from 'react-router-dom';
 import './tareas.css';
 
 function PerfilAdmin() {
     const navigate = useNavigate();
-    const { logout } = useAuth();
+    const { logout } = useAppContext();
 
     const handleSalir = async () => {
         try {

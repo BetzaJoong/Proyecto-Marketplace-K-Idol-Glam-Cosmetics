@@ -124,26 +124,36 @@ export default function MakeupContextProvider({ children }) {
 
     useEffect(() => {
         const token = localStorage.getItem('accessToken');
+        console.log("ESTOY EN EL USE EFFECTO DEL TOKEN :", token)
         if (token) {
-            fetch('/perfil', {
+            fetch('http://localhost:5003/perfil', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,
                 },
             })
             .then(response => {
+        
                 if (response.ok) {
-                    return response.json();
+                    return response;
                 }
                 if (response.status === 401) {
                     throw new Error('Usuario no autenticado');
                 }
                 throw new Error('Error al obtener el perfil del usuario');
             })
-            .then(data => {
-                setUsuario(data);
+            .then(async data => {
+                let dataJson = await data.json()
+                console.log("----------DATA---------------")
+                console.log("----------DATA---------------")
+          
+                console.log(dataJson)
+
+                console.log("----------DATA---------------")
+                console.log("----------DATA---------------")
+                setUsuario(dataJson);
                 setLoggedIn(true);
-                setIsAdmin(data.rol === 'admin'); // Establecer el estado de isAdmin según el rol del usuario
+                setIsAdmin(dataJson.rol === 'admin'); // Establecer el estado de isAdmin según el rol del usuario
             })
             .catch(error => {
                 console.error('Error al obtener perfil de usuario:', error.message);
@@ -174,6 +184,15 @@ export default function MakeupContextProvider({ children }) {
                 console.error('Error loading menu categories:', error);
             });
     }, []);
+
+
+
+    const logout = () => {
+        setLoggedIn(false);
+        setUsuario(null);
+        setIsAdmin(false);
+        localStorage.removeItem('accessToken');
+    };
 
     const calculateTotalPrice = () => {
         const totalPrice = cart.reduce((total, makeup) => total + makeup.price * makeup.quantity, 0);
@@ -208,8 +227,10 @@ export default function MakeupContextProvider({ children }) {
             usuario, 
             isAdmin, 
             setIsAdmin,
+            setUsuario,
             menuCategories,
-            setMenuCategories 
+            setMenuCategories,
+            logout
         }}>
             {children}
         </AppContext.Provider>

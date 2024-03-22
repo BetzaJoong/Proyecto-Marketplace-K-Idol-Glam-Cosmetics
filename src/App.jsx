@@ -90,12 +90,12 @@ import MainPage from "./screen/MainPage";
 import MakeupDetail from "./screen/MakeupDetail";
 import Cart from "./screen/Cart";
 import Error404 from "./screen/Error404";
-import AppContext from "./context/MakeupContext";
+import {AppContext} from "./context/MakeupContext";
 import Footer from "./components/Footer/Footer";
 import Registro from "./auth/Registro";
 import InicioSesion from "./auth/Inicio-sesion";
 import DetailView from "../src/components/Menu/DetailView";
-
+import { useAppContext } from "./context/MakeupContext";
 import PerfilUsuario from './auth/PerfilUsuario';
 import Favoritos from './auth/favoritos/misfavoritos';
 
@@ -109,28 +109,30 @@ import AtencionClientes from './auth/tareas/AtencionClientes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-    const [usuario, setUsuario] = useState(null); // Estado para almacenar la información del usuario
-    const [loggedIn, setLoggedIn] = useState(false); // Estado de inicio de sesión
+    // const [usuario, setUsuario] = useState(null); // Estado para almacenar la información del usuario
+    // const [loggedIn, setLoggedIn] = useState(false); // Estado de inicio de sesión
+    const {loggedIn, usuario, isAdmin} = useAppContext()
 
-    useEffect(() => {
-        const token = localStorage.getItem('accessToken');
-        if (token) {
-            setLoggedIn(true);
-        } else {
-            setLoggedIn(false);
-            setUsuario(null);
-        }
-    }, []);
-
-    return (
-        <AppContext>
-            <div className="App">
+    // useEffect(() => {
+    //     const token = localStorage.getItem('accessToken');
+        
+    // }, []);
+   
+console.log("----------------");
+console.log( localStorage.getItem('accessToken'));
+console.log(usuario);
+console.log(loggedIn);
+console.log(isAdmin);
+console.log("----------------");
+return (
+        <div className="App">
+      
                 {/* Renderiza el Navbar correspondiente según el rol del usuario */}
                 {loggedIn && usuario && usuario.rol === 'admin' ? (
                     <AdminNavbar />
-                ) : (
+                ) :loggedIn && usuario && usuario.rol === 'usuario' ? (
                     <MakeupNavbar />                
-                )}
+                ):false}
                 <Routes>
                     <Route index element={<MainPage />} />
                     <Route path="/registrarse" element={<Registro />} />
@@ -146,7 +148,7 @@ function App() {
                             <Route path="/usuarios" element={<ListaUsuarios />} />
                             <Route path="/atencion-cliente" element={<AtencionClientes />} />
                         </>
-                    ) : (
+                    ) :loggedIn && usuario && usuario.rol === 'usuario' ? (
                         <>
                             <Route path="/home" element={<Home />} />
                             <Route path="/perfil-usuario" element={<PerfilUsuario />} />
@@ -155,14 +157,22 @@ function App() {
                             <Route path="/carrito" element={<Cart />} />
                             <Route path="/favoritos" element={<Favoritos />} />
                         </>
-                    )}
+                    ):   <>
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/perfil-usuario" element={<PerfilUsuario />} />
+                    <Route path="/makeup/:id" element={<MakeupDetail />} />
+                    <Route path="/category/:category" element={<DetailView />} />
+                    <Route path="/carrito" element={<Cart />} />
+                    <Route path="/favoritos" element={<Favoritos />} />
+                </>}
 
                     <Route path="*" element={<Error404 />} />
                 </Routes>
                 <Footer />
+
             </div>
-        </AppContext>
     );
 }
 
 export default App;
+

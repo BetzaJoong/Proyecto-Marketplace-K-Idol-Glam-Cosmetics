@@ -122,6 +122,7 @@ app.get('/perfil', async (req, res) => {
         }
 
         // Devolver el perfil del usuario con los campos deseados
+        console.log(user)
         res.json(user.rows[0]);
     } catch (error) {
         // Manejar errores de verificación del token
