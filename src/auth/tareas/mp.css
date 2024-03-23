@@ -58,7 +58,7 @@
 @media (max-width: 576px) {
     .publicaciones-grid {
         width: 100%;
-        margin-top: 70px;
+        margin-top: 30px;
     }
 
     .publicacion {

@@ -44,7 +44,7 @@
     /* Borde transparente */
     padding: 15px;
     /* Espacio entre el borde y la imagen */
-    border-image: url(../img/Fondo.png) 30 round;
+    background-image: url('../img/purple.jpg');
     /* Imagen de borde con efecto de redondeo */
 }
 
