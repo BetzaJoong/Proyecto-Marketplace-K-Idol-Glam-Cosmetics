@@ -1,7 +1,7 @@
 //_________corsMiddleware_________
 
-const cors = require('cors');
+// const cors = require('cors');
 
-const corsMiddleware = cors();
+// const corsMiddleware = cors();
 
-module.exports = corsMiddleware;
+// module.exports = corsMiddleware;

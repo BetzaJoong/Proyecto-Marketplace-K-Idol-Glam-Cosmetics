@@ -1,8 +1,8 @@
 //______morganMiddleware____
 
-const morgan = require('morgan');
+// const morgan = require('morgan');
 
-const morganMiddleware = morgan('dev');
+// const morganMiddleware = morgan('dev');
 
-module.exports = morganMiddleware;
+// module.exports = morganMiddleware;
 
