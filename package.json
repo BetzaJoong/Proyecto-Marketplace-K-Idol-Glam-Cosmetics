@@ -2,7 +2,7 @@
   "name": "marketplace-de-maquillaje",
   "private": true,
   "version": "0.0.0",
-  "type": "commonjs",
+  "type": "module",
 
   "engines": {
     "node": "20.11.1"
