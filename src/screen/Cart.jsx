@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AppContext } from '../context/MakeupContext';
 import { Card, Button, Row, Col } from 'react-bootstrap';
-import './../screen/cartStyle.css';
+import './cartStyle.css';
 
 export default function Cart() {
     const { cart, calculateTotalPrice, setCart } = useContext(AppContext);
