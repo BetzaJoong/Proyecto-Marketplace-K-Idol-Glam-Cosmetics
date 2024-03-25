@@ -5,7 +5,7 @@ import AdminNavbar from "./components/Navbar/AdminNavbar";
 import Home from "./screen/Home/Home";
 import MainPage from "./screen/MainPage";
 import MakeupDetail from "./screen/MakeupDetail";
-import Cart from "./screen/Cart";
+import Cart from "./screen/Cart/Cart";
 import Error404 from "./screen/Error404";
 import Footer from "./components/Footer/Footer";
 import Registro from "./auth/Registro";
