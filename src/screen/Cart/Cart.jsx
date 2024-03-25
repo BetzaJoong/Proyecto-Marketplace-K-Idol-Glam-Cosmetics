@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { AppContext } from '../context/MakeupContext';
+import { AppContext } from '../../context/MakeupContext';
 import { Card, Button, Row, Col } from 'react-bootstrap';
 import './cartStyle.css';
 
