@@ -5,7 +5,7 @@
   "type": "commonjs",
 
   "engines": {
-    "node": "20.x"
+    "node": "20.11.1"
   },
   
   "scripts": {
