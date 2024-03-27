@@ -26,7 +26,7 @@ export default function MakeupContextProvider({ children }) {
         const token = localStorage.getItem('accessToken');
         console.log("ESTOY EN EL USE EFFECTO DEL TOKEN :", token)
         if (token) {
-            fetch('http://localhost:5003/perfil', {
+            fetch('https://backendmaquillaje.onrender.com/perfil', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`,

@@ -14,7 +14,7 @@ export default function Registro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5003/registrarse', {
+            const response = await fetch('https://backendmaquillaje.onrender.com/registrarse', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

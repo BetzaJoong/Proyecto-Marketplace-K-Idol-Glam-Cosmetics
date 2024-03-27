@@ -14,7 +14,7 @@ export default function InicioSesion() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:5003/iniciarsesion', { 
+            const response = await fetch('https://backendmaquillaje.onrender.com/iniciarsesion', { 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ export default function InicioSesion() {
                 const token = localStorage.getItem('accessToken');
                 console.log("ESTOY EN EL USE EFFECTO DEL TOKEN :", token)
                 if (token) {
-                    fetch('http://localhost:5003/perfil', {
+                    fetch('https://backendmaquillaje.onrender.com/perfil', {
                         method: 'GET',
                         headers: {
                             'Authorization': `Bearer ${token}`,

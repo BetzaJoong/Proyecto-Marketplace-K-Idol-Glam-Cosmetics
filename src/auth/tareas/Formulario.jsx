@@ -31,7 +31,7 @@ function FormularioPublicacion({ cancelar }) {
         };
 
         try {
-            const response = await fetch('http://localhost:5003/publicaciones', {
+            const response = await fetch('https://backendmaquillaje.onrender.com/publicaciones', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
